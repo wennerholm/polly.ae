@@ -1,0 +1,73 @@
+.hero {
+      min-height: 975px;
+      width: 100%;
+      position: relative;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  background: url(../../../../../src/assets/backdropX.jpeg) 60% no-repeat;
+  background-size: cover;
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  background-position-y: -75px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.hero::after {
+  content: "";
+  background: url(../../../../assets/graphic.png) center center no-repeat;
+  width: 100%;
+  height: 150%;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+}
+
+.stepTrust p{
+  margin: 0 0 0.5em 0;
+}
+
+.stepTrust .strong {
+  font-size: 1.2em;
+  font-family: "Miriam Libre";
+  font-weight: bold;
+}
+
+.stepTrust img{
+      width: 70%;
+      height: 200px !important;
+      margin: 0.5em auto;
+      display: block;
+}
+
+.bankWidthDiv {
+    min-width: 140px;
+}
+
+.bankWidthDiv img {
+  height: auto;
+  width: 140px;
+  padding: 1em;
+  margin: auto;
+  text-align: center;
+}
+
+.moreBank {
+  display: none;
+}
+
+.squareLogo {
+  width: 60px !important;
+}

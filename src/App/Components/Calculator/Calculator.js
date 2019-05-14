@@ -2,13 +2,19 @@ import React, { Component } from "react";
 import classes from './Calculator.css';
 
 import Slider from "react-input-slider";
-import { Button } from "react-bootstrap";
+import Aux from '../../hoc/Auxiliary/Auxiliary';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { Button } from "react-bootstrap";
 
 class Calculator extends Component {
   state = {
     loanAmount: 150000,
     year: 12,
     oldLoan: 150000,
+    errors : {},
+    applicant:{},
+    coApplicant: {},
+    hasPartner: false
   };
 
   increaseYear = () => {
@@ -39,6 +45,11 @@ class Calculator extends Component {
     }
   };
 
+  _hasPartner = () => {
+    let hasPartner = this.state.hasPartner;
+    this.setState({hasPartner:!hasPartner});
+  }
+
   render() {
     let switchClassesArray = [
       "d-flex",
@@ -57,7 +68,7 @@ class Calculator extends Component {
     }
 
     return (
-      <div className={classes.Calculator}>
+      <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '500px'}}>
         <div className="row text-center">
           <div className="col-6">
             <small>Total loan amount</small>
@@ -66,21 +77,25 @@ class Calculator extends Component {
           <div className="col-6">
             <small>Loan period</small>
             <div>
-              <Button
+              <button
                 onClick={this.decreaseYear}
                 className={classes.btnRound}
               >
                 <svg viewBox="0 0 24 24">
                   <path fill="#f89838" d="M19,13H5V11H19V13Z" />
                 </svg>
-              </Button>
-              <h2 className="d-inline">{this.state.year} year</h2>
-              <Button onClick={this.increaseYear}>+</Button>
+              </button>
+              <h2 className="d-inline font-weight-normal h3 mx-3">{this.state.year} year</h2>
+              <button onClick={this.increaseYear} className={classes.btnRound}>
+                <svg viewBox="0 0 24 24">
+                  <path fill="#f89838" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
 
-        <div className="row justify-content-center mt-4">
+        <div className="row justify-content-center align-items-center mt-4">
           <span className="mr-3">10,000</span>
           <Slider
             axis="x"
@@ -90,15 +105,17 @@ class Calculator extends Component {
             x={this.state.loanAmount}
             onChange={amount => this.setState({ loanAmount: amount.x })}
             styles={{
-              width: "10%",
+              active: {
+                backgroundColor: "#83db93",
+              },
               track: {
-                backgroundColor: "blue",
-                width: "100%",
-                maxWidth: 400
+                backgroundColor: "#83db93",
+                height: 4,
               },
               thumb: {
                 width: 30,
-                height: 30
+                height: 30,
+                boxShadow: '1px 1px 3px rgba(0,0,0,0.6)'
               }
             }}
           />
@@ -163,40 +180,236 @@ class Calculator extends Component {
           </div>
         </div>
 
+        {this.state.loanTypeCheck ? (
+          <Aux>
+            <div className="row justify-content-center align-items-center mt-3">
+              <div className="col-12 text-center">
+                <small>
+                  Of SEK 150,000, how much should go to collecting / redeeming
+                  loans?
+              </small>
+                <h2 className="mt-3">{this.state.loanAmount}</h2>
+              </div>
+            </div>
+
+            <div className="row justify-content-center align-items-center mt-4">
+              <span className="mr-3">10,000</span>
+              <Slider
+                axis="x"
+                xstep={5000}
+                xmin={10000}
+                xmax={this.state.loanAmount}
+                x={this.state.oldLoan}
+                onChange={amount => this.setState({ oldLoan: amount.x })}
+                styles={{
+                  active: {
+                    backgroundColor: "#83db93",
+                  },
+                  track: {
+                    backgroundColor: "#83db93",
+                    height: 4,
+                  },
+                  thumb: {
+                    width: 30,
+                    height: 30,
+                    boxShadow: '1px 1px 3px rgba(0,0,0,0.6)'
+                  }
+                }}
+              />
+              <span className="ml-3">{this.state.loanAmount}</span>
+            </div>
+          </Aux>
+        ) : null}
+
+        {/* input form */}
+
         <div className="row mt-3">
-          <div className="col-12 text-center">
-            <small>
-              Of SEK 150,000, how much should go to collecting / redeeming
-              loans?
-            </small>
-            <h2 className="mt-3">{this.state.loanAmount}</h2>
+
+          <div className="col-12">
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text bg-white"><FontAwesomeIcon icon="user" /></span>
+              </div>
+              <input type="text" className="form-control" placeholder="Person number" />
+            </div>
+            {this.state.errors.personNumber ? (
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Enter your Social Security number</div>
+            ) : null}
+            
+          </div>
+
+          <div className="col-12">
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text bg-white"><FontAwesomeIcon icon="phone" /></span>
+              </div>
+              <input type="text" className="form-control" placeholder="Mobile number" />
+            </div>
+            {this.state.errors.mobile ? (
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Mobile number is invalid</div>
+            ) : null}
+          </div>
+
+          <div className="col-12">
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text bg-white"><FontAwesomeIcon icon="envelope" /></span>
+              </div>
+              <input type="text" className="form-control" placeholder="Email address" />
+            </div>
+            {this.state.errors.email ? (
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Email is invalid</div>
+            ) : null}
+          </div>
+
+          <div className="col-12">
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text bg-white"><FontAwesomeIcon icon="briefcase" /></span>
+              </div>
+              <select className="form-control custom-select form-control-success" placeholder="Employment type">
+                <option value="-" >Type of employment</option>
+                <option value="employed">Permanent employee (for the time being / trial employee)</option>
+                <option value="selfemployed">Self-employed</option>
+                <option value="earlyRetirement">early retirement</option>
+                <option value="retired">Pensioner</option>
+                <option value="temporaryEmployment">Temporary employment</option>
+                <option value="hourlyEmployment">Employed by the hour</option>
+              </select>
+            </div>
+            {this.state.errors.employementType ? (
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose employment type</div>
+            ) : null}
+          </div>
+
+          {/* employement details */}
+
+          <div className="col-12">
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text bg-white"><FontAwesomeIcon icon="user-friends" /></span>
+              </div>
+              <select className="form-control custom-select form-control-success" placeholder="Relationship status">
+                <option value="-" >Relationship status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="partner">Partner</option>
+              </select>
+            </div>
+            {this.state.errors.relationshipStatus ? (
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose relationship status</div>
+            ) : null}
+          </div>
+            
+            {/* checkbox */}
+          <div className="col-12 mt-2">
+            <label className={[classes.coApp, this.state.hasPartner ? classes.coAppOpen : ''].join(' ')} onClick={this._hasPartner}>
+              <div className={classes.check}>&nbsp;</div>
+              <div style={{ marginLeft: '3rem'}}>
+                <b id="x-partner-label">Add co-applicants</b> <br/>
+                <i>Increase the chance of granted loans</i>
+                {/* <input className="fz-placeholder hide" id="partner-toggle" type="checkbox" name="partnerToggle" /> */}
+              </div>
+            </label>
+          </div>
+
+          {/* partner check form */}
+
+          {this.state.hasPartner ? (
+            <Aux>
+              <div className="col-12">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="user" /></span>
+                  </div>
+                  <input type="text" className="form-control" placeholder="Person number" />
+                </div>
+                {this.state.errors.personNumber ? (
+                  <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Enter your Social Security number</div>
+                ) : null}
+
+              </div>
+
+              <div className="col-12">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="phone" /></span>
+                  </div>
+                  <input type="text" className="form-control" placeholder="Mobile number" />
+                </div>
+                {this.state.errors.mobile ? (
+                  <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Mobile number is invalid</div>
+                ) : null}
+              </div>
+
+              <div className="col-12">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="envelope" /></span>
+                  </div>
+                  <input type="text" className="form-control" placeholder="Email address" />
+                </div>
+                {this.state.errors.email ? (
+                  <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Email is invalid</div>
+                ) : null}
+              </div>
+
+              <div className="col-12">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="briefcase" /></span>
+                  </div>
+                  <select className="form-control custom-select form-control-success" placeholder="Employment type">
+                    <option value="-" >Type of employment</option>
+                    <option value="employed">Permanent employee (for the time being / trial employee)</option>
+                    <option value="selfemployed">Self-employed</option>
+                    <option value="earlyRetirement">early retirement</option>
+                    <option value="retired">Pensioner</option>
+                    <option value="temporaryEmployment">Temporary employment</option>
+                    <option value="hourlyEmployment">Employed by the hour</option>
+                  </select>
+                </div>
+                {this.state.errors.employementType ? (
+                  <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose employment type</div>
+                ) : null}
+              </div>
+
+              <div className="col-12">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="users" /></span>
+                  </div>
+                  <select className="form-control custom-select form-control-success" placeholder="Number of children">
+                    <option value="-" selected disabled>Number of children</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                </div>
+                {this.state.errors.children ? (
+                  <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose number of child</div>
+                ) : null}
+              </div>
+
+            </Aux>
+          ): null}
+          
+        </div>
+
+        
+        <div className="row">
+          <div className="col-12 mt-3  text-center">
+            <small className="text-muted d-block mb-2">Send the application to approve the user agreement and the data protection policy .</small>
+
+            <button className="btn btn-success btn-lg btn-block" disabled={true}>Compare Now - Free!</button>
+            <small className="text-muted d-block my-2">Example: The interest rate is variable and is set individually. For an annuity loan of SEK 100,000 over 9 years, the nominal interest rate is 6.95% and SEK 0 in installment / newspaper fee, the effective interest rate will be 7.18%. Total cost: SEK 134,794 or SEK 1,248 / month divided into 108 months.</small>
           </div>
         </div>
 
-        <div className="row justify-content-center mt-4">
-          <span className="mr-3">10,000</span>
-          <Slider
-            axis="x"
-            xstep={5000}
-            xmin={10000}
-            xmax={this.state.loanAmount}
-            x={this.state.oldLoan}
-            onChange={amount => this.setState({ oldLoan: amount.x })}
-            styles={{
-              width: "10%",
-              track: {
-                backgroundColor: "blue",
-                width: "100%",
-                maxWidth: 400
-              },
-              thumb: {
-                width: 30,
-                height: 30
-              }
-            }}
-          />
-          <span className="ml-3">{this.state.loanAmount}</span>
-        </div>
       </div>
     );
   }
