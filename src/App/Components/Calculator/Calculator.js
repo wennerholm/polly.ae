@@ -233,7 +233,7 @@ class Calculator extends Component {
               <input type="text" className="form-control" placeholder="Emirated ID number (xxx-xxxx-xxxxxxx-x)" />
             </div>
             {this.state.errors.personNumber ? (
-              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Emirated ID number (xxx-xxxx-xxxxxxx-x)</div>
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Emirates ID number (xxx-xxxx-xxxxxxx-x)</div>
             ) : null}
             
           </div>
