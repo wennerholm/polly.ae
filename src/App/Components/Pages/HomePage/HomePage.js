@@ -43,7 +43,21 @@ export default class HomePage extends React.Component {
           </div>
         </header>
 
-
+          <section className="py-5 mt-5">
+          <div className="container">
+          <div className="row">
+              <div className="col-md-6">
+                <div className={classes.creditWidthDiv}>
+                  <img src={require('../../../../assets/credit.jpg')} alt="Ikano" title="Ikano Bank" />
+                </div>
+              </div>
+              <div className="col-md-6 mt-5">
+                <h4 >Credit Score</h4>
+                <p className="pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>  
+            </div>
+          </div>
+          </div>
+          </section>
 
 
         <section className="steps py-5  mb-5">
@@ -114,6 +128,7 @@ export default class HomePage extends React.Component {
 
         {/* Carousel here */}
         
+
 
         <section className="py-5" style={{ backgroundColor: '#FF3926' }}>
           <div className="container">

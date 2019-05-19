@@ -52,6 +52,10 @@
       display: block;
 }
 
+img{
+  width: 100%;
+}
+
 .bankWidthDiv {
     min-width: 140px;
 }
@@ -59,6 +63,14 @@
 .bankWidthDiv img {
   height: auto;
   max-width: 145px;
+  padding: 1em;
+  margin: auto;
+  text-align: center;
+}
+
+.creditWidthDiv img{
+  height: auto;
+  max-width: 400px;
   padding: 1em;
   margin: auto;
   text-align: center;
