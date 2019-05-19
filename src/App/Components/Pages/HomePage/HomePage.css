@@ -58,7 +58,7 @@
 
 .bankWidthDiv img {
   height: auto;
-  width: 140px;
+  max-width: 145px;
   padding: 1em;
   margin: auto;
   text-align: center;
@@ -118,4 +118,10 @@
 
 .footer a {
   color: #fff
+}
+
+.btn-outline-dark {
+    color: #343a40 !important;
+    border: 2px solid black !important;
+    font-weight: bold !important;
 }

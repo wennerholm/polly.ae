@@ -72,7 +72,7 @@ class Calculator extends Component {
         <div className="row text-center">
           <div className="col-6">
             <small>Total loan amount</small>
-            <h2>{this.state.loanAmount} SEK</h2>
+            <h2>AED {this.state.loanAmount}</h2>
           </div>
           <div className="col-6">
             <small>Loan period</small>
@@ -124,8 +124,8 @@ class Calculator extends Component {
 
         <div className="row mt-3 text-center">
           <div className="col-12">
-            <small>About monthly cost</small>
-            <h3>3 027 kr</h3>
+            <small>Estimated monthly cost</small>
+            <h3>AED 3027</h3>
           </div>
         </div>
 
@@ -170,7 +170,7 @@ class Calculator extends Component {
                   >
                     <font style={{ verticalAlign: "inherit" }}>
                       <font style={{ verticalAlign: "inherit" }}>
-                        Collect loans
+                        Loan consolidation
                       </font>
                     </font>
                   </span>
@@ -185,7 +185,7 @@ class Calculator extends Component {
             <div className="row justify-content-center align-items-center mt-3">
               <div className="col-12 text-center">
                 <small>
-                  Of SEK 150,000, how much should go to collecting / redeeming
+                  Of AED 150,000, how much should go to collecting / redeeming
                   loans?
               </small>
                 <h2 className="mt-3">{this.state.loanAmount}</h2>
@@ -230,10 +230,10 @@ class Calculator extends Component {
               <div className="input-group-prepend">
                 <span className="input-group-text bg-white"><FontAwesomeIcon icon="user" /></span>
               </div>
-              <input type="text" className="form-control" placeholder="Person number" />
+              <input type="text" className="form-control" placeholder="Emirated ID number (xxx-xxxx-xxxxxxx-x)" />
             </div>
             {this.state.errors.personNumber ? (
-              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Enter your Social Security number</div>
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Emirated ID number (xxx-xxxx-xxxxxxx-x)</div>
             ) : null}
             
           </div>
@@ -243,7 +243,7 @@ class Calculator extends Component {
               <div className="input-group-prepend">
                 <span className="input-group-text bg-white"><FontAwesomeIcon icon="phone" /></span>
               </div>
-              <input type="text" className="form-control" placeholder="Mobile number" />
+              <input type="text" className="form-control" placeholder="Mobile number (+971 5X XXXXXXX)" />
             </div>
             {this.state.errors.mobile ? (
               <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Mobile number is invalid</div>
@@ -307,7 +307,7 @@ class Calculator extends Component {
               <div className={classes.check}>&nbsp;</div>
               <div style={{ marginLeft: '3rem'}}>
                 <b id="x-partner-label">Add co-applicants</b> <br/>
-                <i>Increase the chance of granted loans</i>
+                <i>Increase the chance of successful application</i>
                 {/* <input className="fz-placeholder hide" id="partner-toggle" type="checkbox" name="partnerToggle" /> */}
               </div>
             </label>
@@ -403,10 +403,10 @@ class Calculator extends Component {
         
         <div className="row">
           <div className="col-12 mt-3  text-center">
-            <small className="text-muted d-block mb-2">Send the application to approve the user agreement and the data protection policy .</small>
+            <small className="text-muted d-block mb-2">By submitting the application you accept our user agreement and data protection policy.</small>
 
-            <button className="btn btn-success btn-lg btn-block" disabled={true}>Compare Now - Free!</button>
-            <small className="text-muted d-block my-2">Example: The interest rate is variable and is set individually. For an annuity loan of SEK 100,000 over 9 years, the nominal interest rate is 6.95% and SEK 0 in installment / newspaper fee, the effective interest rate will be 7.18%. Total cost: SEK 134,794 or SEK 1,248 / month divided into 108 months.</small>
+            <button className="btn btn-success btn-lg btn-block my-3" disabled={true}>Get Your Quotes Now - It's Free!</button>
+            
           </div>
         </div>
 

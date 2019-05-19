@@ -6,9 +6,9 @@ import Aux from './App/hoc/Auxiliary/Auxiliary';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faStroopwafel, faUser, faChevronCircleUp, faPhone, faEnvelope, faChevronUp, faBriefcase, faUserFriends, faUsers, faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faMobile, faStroopwafel, faUser, faChevronCircleUp, faPhone, faEnvelope, faChevronUp, faBriefcase, faUserFriends, faUsers, faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-library.add([faStroopwafel, faChevronCircleUp, faUser, faPhone, faEnvelope, faChevronUp, faBriefcase, faUserFriends, faUsers, faChevronDown, faChevronRight ]);
+library.add([faMobile, faStroopwafel, faChevronCircleUp, faUser, faPhone, faEnvelope, faChevronUp, faBriefcase, faUserFriends, faUsers, faChevronDown, faChevronRight ]);
 
 function App() {
   return (
