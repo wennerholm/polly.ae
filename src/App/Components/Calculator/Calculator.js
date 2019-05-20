@@ -128,13 +128,13 @@ class Calculator extends Component {
     }
 
     return (
-      <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '500px' }}>
-        <div className="row text-center">
-          <div className="col-6">
+      <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '100%' }}>
+        <div className={["d-flex", "align-items-center", classes.justifyContentSpaceEvenly].join(' ')}>
+          <div className="col-611">
             <small>Total loan amount</small>
             <h2>AED {this.state.loanAmount}</h2>
           </div>
-          <div className="col-6">
+          <div className="col-611">
             <small>Loan period</small>
             <div>
               <button
@@ -145,7 +145,7 @@ class Calculator extends Component {
                   <path fill="#f89838" d="M19,13H5V11H19V13Z" />
                 </svg>
               </button>
-              <h2 className="d-inline font-weight-normal h3 mx-3">{this.state.year} year</h2>
+              <h2 className="d-inline font-weight-normal h4 mx-1">{this.state.year} year</h2>
               <button onClick={this.increaseYear} className={classes.btnRound}>
                 <svg viewBox="0 0 24 24">
                   <path fill="#f89838" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path>
