@@ -290,7 +290,7 @@ class Calculator extends Component {
               <div className="input-group-prepend">
                 <span className="input-group-text bg-white"><FontAwesomeIcon icon="user" /></span>
               </div>
-              <input type="text" className="form-control" placeholder="Emirated ID number (xxx-xxxx-xxxxxxx-x)" />
+              <input type="text" className="form-control" placeholder="Emirates ID number (xxx-xxxx-xxxxxxx-x)" />
             </div>
             {this.state.errors.personNumber ? (
               <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Emirates ID number (xxx-xxxx-xxxxxxx-x)</div>
