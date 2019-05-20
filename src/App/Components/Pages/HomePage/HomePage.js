@@ -21,44 +21,47 @@ export default class HomePage extends React.Component {
     return (
       <Aux>
         <header className={classes.hero}>
-          <div className="container">
-            <div className="row mt-5">
-              <div className="col-md-5">
-                <div className="d-none d-lg-block">
-                  <h1 className="h2">Compare loans up till AED600,000</h1>
-                  <b style={{ color: '#dc1f5b' }}>Polly is free and only one credit report request is made</b>
+          <div className={classes.flexyRow}>
+            <div className={[classes.flex, classes.x3, classes.mainStage, 'mt-5'].join(' ')}>
+              <div className={classes.flexyRow}>
+                <div className={classes.flex}>
+                  <div className={classes.flexyRow}>
+                    <div className="d-none d-lg-block">
+                      <h1 className="h2">Compare loans up till AED600,000</h1>
+                      <b style={{ color: '#dc1f5b' }}>Polly is free and only one credit report request is made</b>
 
-                  <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
+                      <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
-                  <p>
-                    By negotiating with the banks on your behalf we will compile quotes from over 15 banks in United Arab Emirates to find the lowest possible rate. Submit an application today and get your quotes!
-                  </p>
+                      <p>
+                        By negotiating with the banks on your behalf we will compile quotes from over 15 banks in United Arab Emirates to find the lowest possible rate. Submit an application today and get your quotes!
+                      </p>
+                    </div>
+
+                    <div className="d-lg-none text-center">
+                      <h1 className="h2">Compare loans up till AED600,000</h1>
+                      <b style={{ color: '#dc1f5b' }}>Free and only one <br />credit report</b>
+
+                      <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
+
+                      <ul className={classes.checklist}>
+                        <li>Loans up to SEK 600,000</li>
+                        <li>Response from 30 banks</li>
+                        <li>Apply in 2 minutes</li>
+                      </ul>
+                    </div>
+
+                    <Calculator style={{ width: '100%', maxWidth: '100%' }} />
+
+                  </div>
                 </div>
-
-                <div className="d-lg-none text-center">
-                  <h1 className="h2">Compare loans up till AED600,000</h1>
-                  <b style={{ color: '#dc1f5b' }}>Free and only one <br/>credit report</b>
-
-                  <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
-
-                  <ul className={classes.checklist}>
-                    <li>Loans up to SEK 600,000</li>
-                    <li>Response from 30 banks</li>
-                    <li>Apply in 2 minutes</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="col-md-7 justify-content-end d-flex">
-                <Calculator style={{ width: '100%', maxWidth: '500px' }} />
               </div>
             </div>
           </div>
         </header>
 
-          <section className="py-5 mt-5">
+        <section className="py-5 mt-5">
           <div className="container">
-          <div className="row">
+            <div className="row">
               <div className="col-md-6">
                 <div className={classes.creditWidthDiv}>
                   <img src={require('../../../../assets/credit.jpg')} alt="Ikano" title="Ikano Bank" />
@@ -66,11 +69,11 @@ export default class HomePage extends React.Component {
               </div>
               <div className="col-md-6 mt-5">
                 <h4 >Credit Score</h4>
-                <p className="pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>  
+                <p className="pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+              </div>
             </div>
           </div>
-          </div>
-          </section>
+        </section>
 
 
         <section className="steps py-5  mb-5">
@@ -140,7 +143,7 @@ export default class HomePage extends React.Component {
         </section> */}
 
         {/* Carousel here */}
-        
+
 
 
         <section className="py-5" style={{ backgroundColor: '#FF3926' }}>
@@ -321,13 +324,13 @@ export default class HomePage extends React.Component {
                   <li><a href="/">Questions and answers</a></li>
                   <li><a href="/">Contact Us</a></li>
                   <li><a href="/">Polly explains</a></li>
-                  <li><a href="/"id="complaintLink" >If you are not satisfied</a></li>
+                  <li><a href="/" id="complaintLink" >If you are not satisfied</a></li>
                 </ul>
               </div>
               <div className="col-md-4 col-sm-12">
                 <ul className="list-unstyled">
-                  <li><a href="/"target="blank_" >Data Protection Policy &amp; Cookies</a></li>
-                  <li><a href="/"target="blank_" >User Agreement</a></li>
+                  <li><a href="/" target="blank_" >Data Protection Policy &amp; Cookies</a></li>
+                  <li><a href="/" target="blank_" >User Agreement</a></li>
                   <li><a href="/">Work with us</a></li>
                   <li><a href="/">Press</a></li>
                   <li><a href="/">Sitemap</a></li>
