@@ -11,7 +11,7 @@ class NavbarComponent extends Component {
       <Navbar bg="white" expand="lg" className="py-4 shadow">
         <div className="container">
           <LinkContainer to="/">
-            <Navbar.Brand href="#home">Polly</Navbar.Brand>
+            <Navbar.Brand>Polly</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

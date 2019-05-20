@@ -11,10 +11,10 @@ class Calculator extends Component {
     loanAmount: 150000,
     year: 12,
     oldLoan: 150000,
-    errors : {},
-    applicant:{},
+    errors: {},
+    applicant: {},
     coApplicant: {},
-    hasPartner: false
+    hasPartner: false,
   };
 
   increaseYear = () => {
@@ -24,6 +24,65 @@ class Calculator extends Component {
     if (this.state.year < 30) {
       this.setState({ year: year });
     }
+  };
+
+  componentDidMount = () => {
+    this.renderJobTemplate();
+  }
+
+  renderJobTemplate = () => {
+    let date = new Date();
+    let year = date.getFullYear()
+    let options = [];
+
+    let template = [];
+
+    for (let i = 0; i < 10; i++) {
+      const d = year--;
+      options.push(<option value={d} key={d}>{d}</option>)
+
+      if (i === 9) {
+        options.push(<option value={d} key={d-1}>Earlier than {d}</option>);
+      }
+    }
+
+    options = options.reverse();
+
+    template.push(
+      <div key="company-name">
+        <div className="input-group">
+          <input type="text" className="form-control" placeholder="Company name" />
+        </div>
+        {this.state.errors.companyName ? (
+          <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Enter company name</div>
+        ) : null}
+      </div>
+    );
+
+    template.push(
+      <div key="income">
+        <div className="input-group">
+          <input type="text" className="form-control" placeholder="Annual income" />
+        </div>
+        {this.state.errors.income ? (
+          <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Enter your income</div>
+        ) : null}
+      </div>
+    );
+
+    template.push(
+      <div key="year">
+        <select className="form-control custom-select form-control-success" placeholder="Working since" onChange={(event) => this.setState({...this.state})} value={''}>
+          {options}
+        </select>
+        {this.state.errors.income ? (
+          <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose an option</div>
+        ) : null}
+      </div>
+    );
+
+    return template;
+
   };
 
   _toggleLoanTypeSwitch = () => {
@@ -47,10 +106,11 @@ class Calculator extends Component {
 
   _hasPartner = () => {
     let hasPartner = this.state.hasPartner;
-    this.setState({hasPartner:!hasPartner});
+    this.setState({ hasPartner: !hasPartner });
   }
 
   render() {
+    console.log(this.state)
     let switchClassesArray = [
       "d-flex",
       "align-items-center",
@@ -68,7 +128,7 @@ class Calculator extends Component {
     }
 
     return (
-      <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '500px'}}>
+      <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '500px' }}>
         <div className="row text-center">
           <div className="col-6">
             <small>Total loan amount</small>
@@ -125,7 +185,7 @@ class Calculator extends Component {
         <div className="row mt-3 text-center">
           <div className="col-12">
             <small>Estimated monthly cost</small>
-            <h3>AED 3027</h3>
+            <h3>AED {this.state.loanAmount}</h3>
           </div>
         </div>
 
@@ -185,10 +245,10 @@ class Calculator extends Component {
             <div className="row justify-content-center align-items-center mt-3">
               <div className="col-12 text-center">
                 <small>
-                  Of AED 150,000, how much should go to collecting / redeeming
+                  Of AED {this.state.loanAmount}, how much should go to collecting / redeeming
                   loans?
               </small>
-                <h2 className="mt-3">{this.state.loanAmount}</h2>
+                <h2 className="mt-3">{this.state.oldLoan}</h2>
               </div>
             </div>
 
@@ -235,7 +295,7 @@ class Calculator extends Component {
             {this.state.errors.personNumber ? (
               <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Emirates ID number (xxx-xxxx-xxxxxxx-x)</div>
             ) : null}
-            
+
           </div>
 
           <div className="col-12">
@@ -267,8 +327,8 @@ class Calculator extends Component {
               <div className="input-group-prepend">
                 <span className="input-group-text bg-white"><FontAwesomeIcon icon="briefcase" /></span>
               </div>
-              <select className="form-control custom-select form-control-success" placeholder="Employment type">
-                <option value="-" >Type of employment</option>
+              <select className="form-control custom-select form-control-success" placeholder="Employment type" onChange={(event) => this.setState({ applicant: { ...this.state.applicant, job: event.target.value } })} value={this.state.applicant.job}>
+                <option value="" >Type of employment</option>
                 <option value="employed">Permanent employee (for the time being / trial employee)</option>
                 <option value="selfemployed">Self-employed</option>
                 <option value="earlyRetirement">early retirement</option>
@@ -280,6 +340,9 @@ class Calculator extends Component {
             {this.state.errors.employementType ? (
               <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose employment type</div>
             ) : null}
+
+            {(this.state.applicant.job) ? this.renderJobTemplate() : null}
+
           </div>
 
           {/* employement details */}
@@ -289,8 +352,8 @@ class Calculator extends Component {
               <div className="input-group-prepend">
                 <span className="input-group-text bg-white"><FontAwesomeIcon icon="user-friends" /></span>
               </div>
-              <select className="form-control custom-select form-control-success" placeholder="Relationship status">
-                <option value="-" >Relationship status</option>
+              <select className="form-control custom-select form-control-success" placeholder="Relationship status" >
+                <option value="" >Relationship status</option>
                 <option value="single">Single</option>
                 <option value="married">Married</option>
                 <option value="partner">Partner</option>
@@ -299,14 +362,15 @@ class Calculator extends Component {
             {this.state.errors.relationshipStatus ? (
               <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose relationship status</div>
             ) : null}
+
           </div>
-            
-            {/* checkbox */}
+
+          {/* checkbox */}
           <div className="col-12 mt-2">
             <label className={[classes.coApp, this.state.hasPartner ? classes.coAppOpen : ''].join(' ')} onClick={this._hasPartner}>
               <div className={classes.check}>&nbsp;</div>
-              <div style={{ marginLeft: '3rem'}}>
-                <b id="x-partner-label">Add co-applicants</b> <br/>
+              <div style={{ marginLeft: '3rem' }}>
+                <b id="x-partner-label">Add co-applicants</b> <br />
                 <i>Increase the chance of successful application</i>
                 {/* <input className="fz-placeholder hide" id="partner-toggle" type="checkbox" name="partnerToggle" /> */}
               </div>
@@ -314,7 +378,6 @@ class Calculator extends Component {
           </div>
 
           {/* partner check form */}
-
           {this.state.hasPartner ? (
             <Aux>
               <div className="col-12">
@@ -359,7 +422,7 @@ class Calculator extends Component {
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white"><FontAwesomeIcon icon="briefcase" /></span>
                   </div>
-                  <select className="form-control custom-select form-control-success" placeholder="Employment type">
+                  <select className="form-control custom-select form-control-success" placeholder="Employment type" onChange={(event) => this.setState({ coApplicant: { ...this.state.coApplicant, job: event.target.value } })} value={this.state.coApplicant.job}>
                     <option value="-" >Type of employment</option>
                     <option value="employed">Permanent employee (for the time being / trial employee)</option>
                     <option value="selfemployed">Self-employed</option>
@@ -372,6 +435,8 @@ class Calculator extends Component {
                 {this.state.errors.employementType ? (
                   <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose employment type</div>
                 ) : null}
+
+                {this.state.coApplicant.job ? this.renderJobTemplate() : null}
               </div>
 
               <div className="col-12">
@@ -380,7 +445,7 @@ class Calculator extends Component {
                     <span className="input-group-text bg-white"><FontAwesomeIcon icon="users" /></span>
                   </div>
                   <select className="form-control custom-select form-control-success" placeholder="Number of children">
-                    <option value="-" selected disabled>Number of children</option>
+                    <option value="-" disabled>Number of children</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -396,17 +461,17 @@ class Calculator extends Component {
               </div>
 
             </Aux>
-          ): null}
-          
+          ) : null}
+
         </div>
 
-        
+
         <div className="row">
           <div className="col-12 mt-3  text-center">
             <small className="text-muted d-block mb-2">By submitting the application you accept our user agreement and data protection policy.</small>
 
             <button className="btn btn-success btn-lg btn-block my-3" disabled={true}>Get Your Quotes Now - It's Free!</button>
-            
+
           </div>
         </div>
 

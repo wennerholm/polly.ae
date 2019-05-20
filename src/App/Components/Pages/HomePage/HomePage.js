@@ -4,7 +4,7 @@ import classes from './HomePage.css';
 import Redline from '../../Redline/Redline';
 import Calculator from '../../Calculator/Calculator';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Carousel from 'react-multi-carousel';
+// import Carousel from 'react-multi-carousel';
 
 export default class HomePage extends React.Component {
 
@@ -24,7 +24,7 @@ export default class HomePage extends React.Component {
           <div className="container">
             <div className="row mt-5">
               <div className="col-md-5">
-                <div>
+                <div className="d-none d-lg-block">
                   <h1 className="h2">Compare loans up till AED600,000</h1>
                   <b style={{ color: '#dc1f5b' }}>Polly is free and only one credit report request is made</b>
 
@@ -33,6 +33,19 @@ export default class HomePage extends React.Component {
                   <p>
                     By negotiating with the banks on your behalf we will compile quotes from over 15 banks in United Arab Emirates to find the lowest possible rate. Submit an application today and get your quotes!
                   </p>
+                </div>
+
+                <div className="d-lg-none text-center">
+                  <h1 className="h2">Compare loans up till AED600,000</h1>
+                  <b style={{ color: '#dc1f5b' }}>Free and only one <br/>credit report</b>
+
+                  <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
+
+                  <ul className={classes.checklist}>
+                    <li>Loans up to SEK 600,000</li>
+                    <li>Response from 30 banks</li>
+                    <li>Apply in 2 minutes</li>
+                  </ul>
                 </div>
               </div>
 
@@ -291,33 +304,33 @@ export default class HomePage extends React.Component {
         </section>
 
         <footer className={['py-5', 'bg-dark', classes.footer].join(' ')}>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4 col-sm-12">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-4 col-sm-12">
                 <ul className="list-unstyled">
                   <li><a href="/">Home</a></li>
-                  <li><a href="">Loan consolidation</a></li>
-                  <li><a href="">Borrow money</a></li>
-                  <li><a href="">Car loan</a></li>
-                  <li><a href="">Insurance</a></li>
+                  <li><a href="/">Loan consolidation</a></li>
+                  <li><a href="/">Borrow money</a></li>
+                  <li><a href="/">Car loan</a></li>
+                  <li><a href="/">Insurance</a></li>
                 </ul>
               </div>
-              <div class="col-md-4 col-sm-12">
+              <div className="col-md-4 col-sm-12">
                 <ul className="list-unstyled">
-                  <li><a href="">About us</a></li>
-                  <li><a href="">Questions and answers</a></li>
-                  <li><a href="">Contact Us</a></li>
-                  <li><a href="">Polly explains</a></li>
-                  <li><a id="complaintLink" href="">If you are not satisfied</a></li>
+                  <li><a href="/">About us</a></li>
+                  <li><a href="/">Questions and answers</a></li>
+                  <li><a href="/">Contact Us</a></li>
+                  <li><a href="/">Polly explains</a></li>
+                  <li><a href="/"id="complaintLink" >If you are not satisfied</a></li>
                 </ul>
               </div>
-              <div class="col-md-4 col-sm-12">
+              <div className="col-md-4 col-sm-12">
                 <ul className="list-unstyled">
-                  <li><a target="blank_" href="">Data Protection Policy &amp; Cookies</a></li>
-                  <li><a target="blank_" href="">User Agreement</a></li>
-                  <li><a href="">Work with us</a></li>
-                  <li><a href="">Press</a></li>
-                  <li><a href="">Sitemap</a></li>
+                  <li><a href="/"target="blank_" >Data Protection Policy &amp; Cookies</a></li>
+                  <li><a href="/"target="blank_" >User Agreement</a></li>
+                  <li><a href="/">Work with us</a></li>
+                  <li><a href="/">Press</a></li>
+                  <li><a href="/">Sitemap</a></li>
                 </ul>
               </div>
             </div>
