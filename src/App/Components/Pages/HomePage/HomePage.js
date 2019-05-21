@@ -22,40 +22,47 @@ export default class HomePage extends React.Component {
       <Aux>
         <header className={classes.hero}>
           <div className={classes.flexyRow}>
-            <div className={[classes.flex, classes.x3, classes.mainStage, 'mt-5'].join(' ')}>
-              <div className={classes.flexyRow}>
-                <div className={classes.flex}>
-                  <div className={classes.flexyRow}>
-                    <div className="d-none d-lg-block">
-                      <h1 className="h2">Compare loans up till AED600,000</h1>
-                      <b style={{ color: '#dc1f5b' }}>Polly is free and only one credit report request is made</b>
 
-                      <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
+            <div className={[classes.flex, 'd-none', 'd-xl-flex'].join(' ')}></div>
 
-                      <p>
-                        By negotiating with the banks on your behalf we will compile quotes from over 15 banks in United Arab Emirates to find the lowest possible rate. Submit an application today and get your quotes!
+            {/* <div className={classes.flexyRow}> */}
+              <div className={[classes.flex, classes.x3, classes.mainStage, 'mt-5'].join(' ')}>
+                <div className={classes.flexyRow}>
+                  <div className={classes.flex}>
+                    <div className={classes.flexyRow}>
+                      <div className="d-none d-lg-block">
+                        <h1 className="h2">Compare loans up till AED600,000</h1>
+                        <b style={{ color: '#dc1f5b' }}>Polly is free and only one credit report request is made</b>
+
+                        <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
+
+                        <p>
+                          By negotiating with the banks on your behalf we will compile quotes from over 15 banks in United Arab Emirates to find the lowest possible rate. Submit an application today and get your quotes!
                       </p>
+                      </div>
+
+                      <div className="d-lg-none text-center">
+                        <h1 className="h2">Compare loans up till AED600,000</h1>
+                        <b style={{ color: '#dc1f5b' }}>Free and only one <br />credit report</b>
+
+                        <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
+
+                        <ul className={classes.checklist}>
+                          <li>Loans up to SEK 600,000</li>
+                          <li>Response from 30 banks</li>
+                          <li>Apply in 2 minutes</li>
+                        </ul>
+                      </div>
+
+                      <Calculator style={{ width: '100%', maxWidth: '100%' }} />
+
                     </div>
-
-                    <div className="d-lg-none text-center">
-                      <h1 className="h2">Compare loans up till AED600,000</h1>
-                      <b style={{ color: '#dc1f5b' }}>Free and only one <br />credit report</b>
-
-                      <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
-
-                      <ul className={classes.checklist}>
-                        <li>Loans up to SEK 600,000</li>
-                        <li>Response from 30 banks</li>
-                        <li>Apply in 2 minutes</li>
-                      </ul>
-                    </div>
-
-                    <Calculator style={{ width: '100%', maxWidth: '100%' }} />
-
                   </div>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
+
+            <div className={[classes.flex, 'd-none', 'd-xl-flex'].join(' ')}></div>
           </div>
         </header>
 
