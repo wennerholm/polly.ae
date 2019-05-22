@@ -42,7 +42,7 @@ class Calculator extends Component {
       options.push(<option value={d} key={d}>{d}</option>)
 
       if (i === 9) {
-        options.push(<option value={d} key={d-1}>Earlier than {d}</option>);
+        options.push(<option value={d} key={d-1}>Employed since {d}</option>);
       }
     }
 
@@ -62,7 +62,7 @@ class Calculator extends Component {
     template.push(
       <div key="income">
         <div className="input-group">
-          <input type="text" className="form-control" placeholder="Annual income" />
+          <input type="text" className="form-control" placeholder="Monthly salary" />
         </div>
         {this.state.errors.income ? (
           <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Enter your income</div>
@@ -72,7 +72,7 @@ class Calculator extends Component {
 
     template.push(
       <div key="year">
-        <select className="form-control custom-select form-control-success" placeholder="Working since" onChange={(event) => this.setState({...this.state})} value={''}>
+        <select className="form-control custom-select form-control-success" placeholder="Employed since" onChange={(event) => this.setState({...this.state})} value={''}>
           {options}
         </select>
         {this.state.errors.income ? (

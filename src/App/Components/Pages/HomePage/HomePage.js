@@ -48,13 +48,13 @@ export default class HomePage extends React.Component {
                         <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
                         <ul className={classes.checklist}>
-                          <li>Loans up to SEK 600,000</li>
-                          <li>Response from 30 banks</li>
+                          <li>Loans up to AED 600,000</li>
+                          <li>Response from 15 banks</li>
                           <li>Apply in 2 minutes</li>
                         </ul>
                       </div>
 
-                      <Calculator style={{ width: '100%', maxWidth: '100%' }} />
+                      <Calculator style={{ width: '100%', maxWidth: '100%', }} />
 
                     </div>
                   </div>
@@ -71,13 +71,15 @@ export default class HomePage extends React.Component {
             <div className="row">
               <div className="col-md-6">
                 <div className={classes.creditWidthDiv}>
-                  <img src={require('../../../../assets/credit.jpg')} alt="Ikano" title="Ikano Bank" />
+                  <img src={require('../../../../assets/cibil-score.png')}/>
                 </div>
               </div>
               <div className="col-md-6 mt-5">
-                <h4 >Credit Score</h4>
-                <p className="pt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-              </div>
+                <h5><b>What is the Credit Score?</b></h5>
+                <p>Credit Score is a three-digit number that predicts how likely you are to make your loan and credit card payments on time, the score ranges from 300 to 900. A low score indicates a higher risk, whereas a higher score indicates a lower risk.</p>
+                <h5 className="pt-3"><b>How is the Credit Score calculated?</b></h5>
+                <p>Your Credit Score is dynamic, and correspond to factors such as missed or delayed credit card payments, utilization of your credit card limits, or if you are taking on additional loans or credit cards.</p>
+                </div>
             </div>
           </div>
         </section>
@@ -88,52 +90,52 @@ export default class HomePage extends React.Component {
 
             <div className="d-flex justify-content-center align-items-center text-center" style={{ flexWrap: 'wrap', flexDirection: 'row' }}>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank1.jpeg')} alt="Ikano" title="Ikano Bank" />
+                <img src={require('../../../../assets/banks/bank1.jpeg')} />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank2.jpg')} alt="Swedbank" title="Swedbank" />
+                <img src={require('../../../../assets/banks/bank2.jpg')}  />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank3.jpg')} alt="Resurs bank" title="Resurs Bank" />
+                <img src={require('../../../../assets/banks/bank3.jpg')}  />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank4.jpg')} alt="Ica banken" title="ICA Banken" />
+                <img src={require('../../../../assets/banks/bank4.jpg')}  />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank5.jpg')} alt="Coop MedMera bank" title="Coop MedMera Bank" />
+                <img src={require('../../../../assets/banks/bank5.jpg')}  />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank6.jpg')} alt="Santander" title="Santander Consumer Bank" />
+                <img src={require('../../../../assets/banks/bank6.jpg')}  />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank7.jpg')} alt="Forex bank" title="Forex Bank" />
+                <img src={require('../../../../assets/banks/bank7.jpg')}  />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank8.png')} alt="Wasa kredit" title="Wasa Kredit" />
+                <img src={require('../../../../assets/banks/bank8.png')} />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank9.png')} alt="Lendify" title="Lendify" />
+                <img src={require('../../../../assets/banks/bank9.png')} />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank10.jpg')} alt="Komplett" title="Komplett" />
+                <img src={require('../../../../assets/banks/bank10.jpg')}  />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank11.jpg')} alt="Spring Finance/Bluestep" title="Spring Finance/Bluestep" />
+                <img src={require('../../../../assets/banks/bank11.jpg')}  />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank12.jpg')} alt="Marginalen bank" title="Marginalen Bank" />
+                <img src={require('../../../../assets/banks/bank12.jpg')}  />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank13.jpg')} alt="Sevenday finans" title="Sevenday Finans" />
+                <img src={require('../../../../assets/banks/bank13.jpg')}  />
               </div>
             </div>
 
             <div className="row">
               <div className="col-12 justify-content-center d-flex">
-                <button className="btn btn-outline-dark mt-2 rounded-pill" onClick={() => {
+                <button className={['btn', 'btn-outline-dark', 'mt-2', 'font-weight-bold', 'rounded-pill', classes.buttonBorder].join(' ')} onClick={() => {
                   let status = this.state.moreBanks;
                   this.setState({ moreBanks: !status });
-                }}>Show all {this.state.moreBanks ? <FontAwesomeIcon icon="chevron-up" /> : <FontAwesomeIcon icon="chevron-down" />}</button>
+                }}>Show all {this.state.moreBanks ? <FontAwesomeIcon icon="chevron-up" /> : <FontAwesomeIcon className={[classes.arrowColor].join(' ')} icon="chevron-down" />}</button>
               </div>
             </div>
 
@@ -225,11 +227,14 @@ export default class HomePage extends React.Component {
                       let status = this.state.questions.one;
 
                       this.setState({ questions: { ...this.state.questions, one: !status } })
-                    }}>Is only one credit report search done?</h4>
+                    }}>What are the requirements to borrow via Polly?</h4>
 
                     <div className="mt-3" style={{ display: this.state.questions.one ? 'block' : 'none' }}>
-                      <p>Yes! Although you get up to 30 different loan offers, only one credit report is made. However, all lenders who have taken it from your information must send a separate inquiry copy. In some cases, some banks may include additional information in addition to the information provided by UC to improve the quality of the credit decision.</p>
-                      <p>In order to maximize the chance of good loan terms, we also recommend that you include a co-applicant in your comparison. This is often a great advantage when the banks make their assessment.</p>
+                      <ul> <li>You must above 21 years of age</li>
+                        <li>Have a minimum monthly salary of AED7,000</li>
+                        <li>Hold a valid UAE residence Visa & Emirates ID</li>
+                        <li>Salary transfer may be required</li>
+                        </ul>
                     </div>
                   </div>
 
@@ -243,12 +248,12 @@ export default class HomePage extends React.Component {
                       let status = this.state.questions.two;
 
                       this.setState({ questions: { ...this.state.questions, two: !status } })
-                    }}>Am I eligible for a loan?</h4>
+                    }}>Is only one credit report search done?</h4>
 
                     <div className="mt-3" style={{ display: this.state.questions.two ? 'block' : 'none' }}>
-                      <p>Yes! Although you get up to 30 different loan offers, only one credit report is made. However, all lenders who have taken it from your information must send a separate inquiry copy. In some cases, some banks may include additional information in addition to the information provided by UC to improve the quality of the credit decision.</p>
-                      <p>In order to maximize the chance of good loan terms, we also recommend that you include a co-applicant in your comparison. This is often a great advantage when the banks make their assessment.</p>
-                    </div>
+                      <p>Yes! Even though you will potentially receive quotes from up to 30 banks, only one request is made for your Credit Report from Al Etihad Credit Bureau. Banks may require further information in regards to your application to ensure a well-informed credit assessment.</p>
+                      <p>To maximise the chances to submit a successful application we recommend to add an co-applicant, as this drastically increases your credit profile which not only makes you more eligible for a loan, but can also reduce you interest rate!</p>
+                      </div>
                   </div>
 
                 </div>
@@ -270,8 +275,7 @@ export default class HomePage extends React.Component {
                     }}>How quickly can I receive the quotes from the banks?</h4>
 
                     <div className="mt-3" style={{ display: this.state.questions.three ? 'block' : 'none' }}>
-                      <p>Yes! Although you get up to 30 different loan offers, only one credit report is made. However, all lenders who have taken it from your information must send a separate inquiry copy. In some cases, some banks may include additional information in addition to the information provided by UC to improve the quality of the credit decision.</p>
-                      <p>In order to maximize the chance of good loan terms, we also recommend that you include a co-applicant in your comparison. This is often a great advantage when the banks make their assessment.</p>
+                      <p>Normally you will receive your first quote within one hour and you should expect feedback from all banks within 24h. This may vary during public holidays.</p>
                     </div>
                   </div>
 
@@ -288,8 +292,7 @@ export default class HomePage extends React.Component {
                     }}>How can Polly be a free service?</h4>
 
                     <div className="mt-3" style={{ display: this.state.questions.four ? 'block' : 'none' }}>
-                      <p>Yes! Although you get up to 30 different loan offers, only one credit report is made. However, all lenders who have taken it from your information must send a separate inquiry copy. In some cases, some banks may include additional information in addition to the information provided by UC to improve the quality of the credit decision.</p>
-                      <p>In order to maximize the chance of good loan terms, we also recommend that you include a co-applicant in your comparison. This is often a great advantage when the banks make their assessment.</p>
+                      <p>Polly receives commission from the bank that you choose to be your loan provider. There are no surcharges such as increased interest or other fees when your using Polly. Essentially we are acting as a marketplace for banks and they pay commission if a successful loan applicant is found via Polly, just like they would spend money on any advertising platform.</p>
                     </div>
                   </div>
 
@@ -306,7 +309,7 @@ export default class HomePage extends React.Component {
 
             <div className="row">
               <div className="col-12 justify-content-center d-flex">
-                <button className="btn btn-outline-dark btn-lg mt-5 rounded-pill">View more questions <FontAwesomeIcon icon="chevron-right" /></button>
+                <button className={['btn', 'btn-outline-dark', 'font-weight-bold', 'mt-2', 'rounded-pill', classes.buttonBorder].join(' ')}>View more questions <FontAwesomeIcon className={[classes.arrowColor].join(' ')} icon="chevron-right" /></button>
               </div>
             </div>
 

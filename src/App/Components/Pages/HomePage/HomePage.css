@@ -70,7 +70,6 @@ img {
 
 .creditWidthDiv img {
   height: auto;
-  max-width: 400px;
   padding: 1em;
   margin: auto;
   text-align: center;
@@ -194,7 +193,7 @@ img {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 @media (max-width: 991px) {
@@ -235,4 +234,12 @@ img {
   -webkit-flex-basis: 50% !important;
   -ms-flex-preferred-size: 50% !important;
   flex-basis: 50% !important;
+}
+
+.buttonBorder{
+  border: 2px solid black;
+}
+
+.arrowColor{
+  color:#FF3926;
 }

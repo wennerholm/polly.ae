@@ -9,50 +9,39 @@ import classes from './Navbar.css';
 class NavbarComponent extends Component {
   render() {
     return (
-      <Navbar bg="white" expand="lg" className="py-4 shadow">
-        <div className={['d-lg-none', 'd-flex', classes.justifyContentSpaceBetwwen].join(' ')}>
+      <Navbar bg="white" expand="lg" className="shadow">
+        <div className={['d-lg-none', 'd-flex', classes.justifyContentSpaceBetwwen].join(' ')} style={{ height: '40px' }}>
           <LinkContainer to="/">
-            <Nav.Link>Home</Nav.Link>
+            <Nav.Link><span style={{ color: '#000000' }}>Home</span></Nav.Link>
           </LinkContainer>
 
           <LinkContainer to="/">
-            <Navbar.Brand>Polly</Navbar.Brand>
+            <Navbar.Brand><span style={{ color: '#dc1f5b', fontSize: '24px', fontWeight: 'bold' }}>Polly</span></Navbar.Brand>
           </LinkContainer>
 
           <LinkContainer to="car-loan">
-            <Nav.Link><FontAwesomeIcon icon="mobile" /></Nav.Link>
+            <Nav.Link><FontAwesomeIcon style={{ color: '#000000' }} icon="mobile" /></Nav.Link>
           </LinkContainer>
         </div>
-        <div className="container d-none d-lg-flex">
+        <div className="container d-none d-lg-flex" style={{ height: '80px' }}>
           <LinkContainer to="/">
-            <Navbar.Brand>Polly</Navbar.Brand>
+            <Navbar.Brand><span style={{ color: '#dc1f5b', fontSize: '24px', fontWeight: 'bold' }}>Polly</span></Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav>
               <LinkContainer to="/">
-                <Nav.Link>Home</Nav.Link>
+                <Nav.Link><span style={{ color: '#000000' }}>Home</span></Nav.Link>
               </LinkContainer>
 
               <LinkContainer to="car-loan">
-                <Nav.Link>Car</Nav.Link>
-              </LinkContainer>
-
-              <LinkContainer to="car-loan">
-                <Nav.Link><FontAwesomeIcon icon="mobile" /> Phone Number</Nav.Link>
+                <Nav.Link><span style={{ color: '#000000' }}>Car</span></Nav.Link>
               </LinkContainer>
             </Nav>
+
             <Nav className="ml-auto">
-              <LinkContainer to="/">
-                <Nav.Link>Home</Nav.Link>
-              </LinkContainer>
-
               <LinkContainer to="car-loan">
-                <Nav.Link>Car</Nav.Link>
-              </LinkContainer>
-
-              <LinkContainer to="car-loan">
-                <Nav.Link><FontAwesomeIcon icon="mobile" /> Phone Number</Nav.Link>
+                <Nav.Link><FontAwesomeIcon style={{ color: '#000000' }} icon="mobile" /><span style={{ color: '#000000' }}> Phone number</span></Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>
