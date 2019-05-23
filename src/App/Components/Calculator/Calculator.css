@@ -17,7 +17,7 @@
     border-image: linear-gradient(to right, #ff3926 0%, #dc1f5c 100%) 1% round;
     text-shadow: none;
     color: #000000;
-    min-width: 380px;
+    min-width: 360px;
 }
 @media (min-width: 992px) {
     .Calculator {
