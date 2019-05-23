@@ -30,7 +30,7 @@ export default class HomePage extends React.Component {
                 <div className={classes.flexyRow}>
                   <div className={classes.flex}>
                     <div className={classes.flexyRow}>
-                      <div className="d-none d-lg-block">
+                    <div className="d-none d-lg-block" style={{ maxWidth: '40%', }}>
                         <h1 className="h2">Compare loans up till AED600,000</h1>
                         <b style={{ color: '#dc1f5b' }}>Polly is free and only one credit report request is made</b>
 

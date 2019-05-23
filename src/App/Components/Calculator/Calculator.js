@@ -129,13 +129,13 @@ class Calculator extends Component {
 
     return (
       <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '100%' }}>
-        <div className={["d-flex", "align-items-center", classes.justifyContentSpaceEvenly].join(' ')}>
+        <div className={["d-flex", "align-items-center","text-center", classes.justifyContentSpaceEvenly].join(' ')}>
           <div className="col-611">
-            <small>Total loan amount</small>
+            <small style={{ color: '#9d9d9d' }}>Total loan amount</small>
             <h2 className="mb-0">AED {this.state.loanAmount}</h2>
           </div>
           <div className="col-611">
-            <small>Loan period</small>
+            <small style={{ color: '#9d9d9d' }}>Loan period</small>
             <div>
               <button
                 onClick={this.decreaseYear}
@@ -156,7 +156,7 @@ class Calculator extends Component {
         </div>
 
         <div className="row justify-content-center align-items-center mt-2">
-          <span className="mr-3 small">10,000</span>
+          <span className="mr-3 small" style={{ color: '#9d9d9d' }}>10,000</span>
           <Slider
             axis="x"
             xstep={5000}
@@ -180,12 +180,12 @@ class Calculator extends Component {
               }
             }}
           />
-          <span className="ml-3 small">600,000</span>
+          <span className="ml-3 small" style={{ color: '#9d9d9d' }}>600,000</span>
         </div>
 
         <div className="row mt-2 text-center">
           <div className="col-12">
-            <small>Estimated monthly cost</small>
+            <small style={{ color: '#9d9d9d' }}>Estimated monthly cost</small>
             <h3 className="mb-0">AED {this.state.loanAmount}</h3>
           </div>
         </div>
@@ -239,7 +239,7 @@ class Calculator extends Component {
             </div>
 
             <div className="row justify-content-center align-items-center mt-2">
-              <span className="mr-3 small">10,000</span>
+              <span className="mr-3 small" style={{ color: '#9d9d9d' }}>10,000</span>
               <Slider
                 axis="x"
                 xstep={5000}
@@ -263,7 +263,7 @@ class Calculator extends Component {
                   }
                 }}
               />
-              <span className="ml-3 small">{this.state.loanAmount}</span>
+              <span className="ml-3 small" style={{ color: '#9d9d9d' }}>{this.state.loanAmount}</span>
             </div>
           </Aux>
         ) : null}
@@ -280,7 +280,7 @@ class Calculator extends Component {
               <input type="text" className="form-control" placeholder="Emirates ID number (xxx-xxxx-xxxxxxx-x)" />
             </div>
             {this.state.errors.personNumber ? (
-              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Emirates ID number (xxx-xxxx-xxxxxxx-x)</div>
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1" ><FontAwesomeIcon icon="chevron-up" /> Emirates ID number (xxx-xxxx-xxxxxxx-x)</div>
             ) : null}
 
           </div>
@@ -455,9 +455,9 @@ class Calculator extends Component {
 
         <div className="row">
           <div className="col-12 mt-3  text-center">
-            <small className="text-muted d-block mb-2">By submitting the application you accept our user agreement and data protection policy.</small>
+            <small className="text-muted d-block mb-2" style={{ fontSize: '10px' }}>By submitting the application you accept our <u>user agreement</u> and <u>data protection policynpm </u>.</small>
 
-            <button className="btn btn-success btn-lg btn-block my-3" disabled={true}>Get Your Quotes Now - It's Free!</button>
+            <button className={["btn", "btn-lg", "btn-block", "my-3", classes.buttonCalculator].join(' ')}>Get Your Quotes Now - It's Free!</button>
 
           </div>
         </div>
