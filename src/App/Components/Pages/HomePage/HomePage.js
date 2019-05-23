@@ -71,7 +71,7 @@ export default class HomePage extends React.Component {
             <div className="row">
               <div className="col-md-6">
                 <div className={classes.creditWidthDiv}>
-                  <img src={require('../../../../assets/cibil-score.png')}/>
+                  <img src={require('../../../../assets/cibil-score.png')} alt="img"/>
                 </div>
               </div>
               <div className="col-md-6 mt-5">
@@ -90,43 +90,43 @@ export default class HomePage extends React.Component {
 
             <div className="d-flex justify-content-center align-items-center text-center" style={{ flexWrap: 'wrap', flexDirection: 'row' }}>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank1.jpeg')} />
+                <img src={require('../../../../assets/banks/bank1.jpeg')} alt="bank img"/>
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank2.jpg')}  />
+                <img src={require('../../../../assets/banks/bank2.jpg')} alt="bank img" />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank3.jpg')}  />
+                <img src={require('../../../../assets/banks/bank3.jpg')} alt="bank img" />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank4.jpg')}  />
+                <img src={require('../../../../assets/banks/bank4.jpg')} alt="bank img" />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank5.jpg')}  />
+                <img src={require('../../../../assets/banks/bank5.jpg')} alt="bank img" />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank6.jpg')}  />
+                <img src={require('../../../../assets/banks/bank6.jpg')}  alt="bank img"/>
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank7.jpg')}  />
+                <img src={require('../../../../assets/banks/bank7.jpg')}  alt="bank img"/>
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank8.png')} />
+                <img src={require('../../../../assets/banks/bank8.png')} alt="bank img"/>
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank9.png')} />
+                <img src={require('../../../../assets/banks/bank9.png')} alt="bank img"/>
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank10.jpg')}  />
+                <img src={require('../../../../assets/banks/bank10.jpg')}  alt="bank img"/>
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank11.jpg')}  />
+                <img src={require('../../../../assets/banks/bank11.jpg')} alt="bank img" />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank12.jpg')}  />
+                <img src={require('../../../../assets/banks/bank12.jpg')} alt="bank img" />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank13.jpg')}  />
+                <img src={require('../../../../assets/banks/bank13.jpg')}  alt="bank img"/>
               </div>
             </div>
 

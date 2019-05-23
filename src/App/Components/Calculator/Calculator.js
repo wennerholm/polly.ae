@@ -132,7 +132,7 @@ class Calculator extends Component {
         <div className={["d-flex", "align-items-center", classes.justifyContentSpaceEvenly].join(' ')}>
           <div className="col-611">
             <small>Total loan amount</small>
-            <h2>AED {this.state.loanAmount}</h2>
+            <h2 className="mb-0">AED {this.state.loanAmount}</h2>
           </div>
           <div className="col-611">
             <small>Loan period</small>
@@ -155,8 +155,8 @@ class Calculator extends Component {
           </div>
         </div>
 
-        <div className="row justify-content-center align-items-center mt-4">
-          <span className="mr-3">10,000</span>
+        <div className="row justify-content-center align-items-center mt-2">
+          <span className="mr-3 small">10,000</span>
           <Slider
             axis="x"
             xstep={5000}
@@ -171,6 +171,7 @@ class Calculator extends Component {
               track: {
                 backgroundColor: "#83db93",
                 height: 4,
+                width: '60%',
               },
               thumb: {
                 width: 30,
@@ -179,17 +180,17 @@ class Calculator extends Component {
               }
             }}
           />
-          <span className="ml-3">600,000</span>
+          <span className="ml-3 small">600,000</span>
         </div>
 
-        <div className="row mt-3 text-center">
+        <div className="row mt-2 text-center">
           <div className="col-12">
             <small>Estimated monthly cost</small>
-            <h3>AED {this.state.loanAmount}</h3>
+            <h3 className="mb-0">AED {this.state.loanAmount}</h3>
           </div>
         </div>
 
-        <div className="row mt-3">
+        <div className="row mt-2">
           <div className="col-12">
             <div className={classes.switchContainer}>
               <div className={switchClassesArray.join(" ")}>
@@ -204,36 +205,21 @@ class Calculator extends Component {
                   }}
                 />
                 <div className={classes.switchLabelWrap}>
-                  <span
-                    className={classes.newLoanSwitchLabel}
-                    style={{
-                      color:
-                        this.state.loanTypeCheck === false
-                          ? "#1bac5e"
-                          : "rgba(0,0,0,0.37)"
-                    }}
-                  >
-                    <font style={{ verticalAlign: "inherit" }}>
-                      <font style={{ verticalAlign: "inherit" }}>
-                        New loan
-                      </font>
-                    </font>
-                  </span>
-                  <span
-                    className={classes.collectedLoanSwitchLabel}
-                    style={{
-                      color:
-                        this.state.loanTypeCheck === true
-                          ? "#1bac5e"
-                          : "rgba(0,0,0,0.37)"
-                    }}
-                  >
-                    <font style={{ verticalAlign: "inherit" }}>
-                      <font style={{ verticalAlign: "inherit" }}>
-                        Loan consolidation
-                      </font>
-                    </font>
-                  </span>
+                  <span style={{
+                    marginRight: '33px',
+                    paddingLeft: '50px',
+                    color:
+                      this.state.loanTypeCheck === false
+                        ? "#1bac5e"
+                        : "rgba(0,0,0,0.37)"
+                  }}>New loan</span>
+                  <span style={{
+                    marginLeft: '40px',
+                    color:
+                      this.state.loanTypeCheck === true
+                        ? "#1bac5e"
+                        : "rgba(0,0,0,0.37)"
+                  }}>Loan consolidation</span>
                 </div>
               </div>
             </div>
@@ -248,12 +234,12 @@ class Calculator extends Component {
                   Of AED {this.state.loanAmount}, how much should go to collecting / redeeming
                   loans?
               </small>
-                <h2 className="mt-3">{this.state.oldLoan}</h2>
+                <h2 className="mt-2 mb-0">{this.state.oldLoan}</h2>
               </div>
             </div>
 
-            <div className="row justify-content-center align-items-center mt-4">
-              <span className="mr-3">10,000</span>
+            <div className="row justify-content-center align-items-center mt-2">
+              <span className="mr-3 small">10,000</span>
               <Slider
                 axis="x"
                 xstep={5000}
@@ -268,6 +254,7 @@ class Calculator extends Component {
                   track: {
                     backgroundColor: "#83db93",
                     height: 4,
+                    width: '60%',
                   },
                   thumb: {
                     width: 30,
@@ -276,7 +263,7 @@ class Calculator extends Component {
                   }
                 }}
               />
-              <span className="ml-3">{this.state.loanAmount}</span>
+              <span className="ml-3 small">{this.state.loanAmount}</span>
             </div>
           </Aux>
         ) : null}
