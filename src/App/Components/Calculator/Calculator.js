@@ -97,7 +97,7 @@ class Calculator extends Component {
   };
 
   decreaseYear = () => {
-    if (this.state.year > 0) {
+    if (this.state.year > 1) {
       var year = this.state.year;
       year--;
       this.setState({ year: year });
@@ -186,7 +186,7 @@ class Calculator extends Component {
         <div className="row mt-2 text-center">
           <div className="col-12">
             <small style={{ color: '#9d9d9d' }}>Estimated monthly cost</small>
-            <h3 className="mb-0">AED {this.state.loanAmount}</h3>
+            <h3 className="mb-0">AED {Math.floor(this.state.loanAmount / this.state.year / 12)}</h3>
           </div>
         </div>
 
