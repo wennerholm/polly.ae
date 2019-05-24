@@ -352,6 +352,27 @@ class Calculator extends Component {
 
           </div>
 
+          <div className="col-12">
+            <div className="input-group">
+              <div className="input-group-prepend">
+                <span className="input-group-text bg-white"><FontAwesomeIcon icon="users" /></span>
+              </div>
+              <select className="form-control custom-select form-control-success" placeholder="Number of children (under 18)">
+                <option value="-">Number of children(under 18)</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+            </div>
+            {this.state.errors.children ? (
+              <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose number of child</div>
+            ) : null}
+          </div>
+
           {/* checkbox */}
           <div className="col-12 mt-2">
             <label className={[classes.coApp, this.state.hasPartner ? classes.coAppOpen : ''].join(' ')} onClick={this._hasPartner}>
@@ -372,10 +393,10 @@ class Calculator extends Component {
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white"><FontAwesomeIcon icon="user" /></span>
                   </div>
-                  <input type="text" className="form-control" placeholder="Person number" />
+                  <input type="text" className="form-control" placeholder="Emirates ID number (xxx-xxxx-xxxxxxx-x)" />
                 </div>
                 {this.state.errors.personNumber ? (
-                  <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Enter your Social Security number</div>
+                  <div className="alert rounded-0 mb-0 bg-danger text-white py-1" ><FontAwesomeIcon icon="chevron-up" /> Emirates ID number (xxx-xxxx-xxxxxxx-x)</div>
                 ) : null}
 
               </div>
@@ -385,7 +406,7 @@ class Calculator extends Component {
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white"><FontAwesomeIcon icon="phone" /></span>
                   </div>
-                  <input type="text" className="form-control" placeholder="Mobile number" />
+                  <input type="text" className="form-control" placeholder="Mobile number (+971 5X XXXXXXX)" />
                 </div>
                 {this.state.errors.mobile ? (
                   <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Mobile number is invalid</div>
@@ -409,8 +430,8 @@ class Calculator extends Component {
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white"><FontAwesomeIcon icon="briefcase" /></span>
                   </div>
-                  <select className="form-control custom-select form-control-success" placeholder="Employment type" onChange={(event) => this.setState({ coApplicant: { ...this.state.coApplicant, job: event.target.value } })} value={this.state.coApplicant.job}>
-                    <option value="-" >Type of employment</option>
+                  <select className="form-control custom-select form-control-success" placeholder="Employment type" onChange={(event) => this.setState({ applicant: { ...this.state.applicant, job: event.target.value } })} value={this.state.applicant.job}>
+                    <option value="" >Type of employment</option>
                     <option value="employed">Permanent employee (for the time being / trial employee)</option>
                     <option value="selfemployed">Self-employed</option>
                     <option value="earlyRetirement">early retirement</option>
@@ -423,7 +444,28 @@ class Calculator extends Component {
                   <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose employment type</div>
                 ) : null}
 
-                {this.state.coApplicant.job ? this.renderJobTemplate() : null}
+                {(this.state.applicant.job) ? this.renderJobTemplate() : null}
+
+              </div>
+
+              {/* employement details */}
+
+              <div className="col-12">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="user-friends" /></span>
+                  </div>
+                  <select className="form-control custom-select form-control-success" placeholder="Relationship status" >
+                    <option value="" >Relationship status</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="partner">Partner</option>
+                  </select>
+                </div>
+                {this.state.errors.relationshipStatus ? (
+                  <div className="alert rounded-0 mb-0 bg-danger text-white py-1"><FontAwesomeIcon icon="chevron-up" /> Choose relationship status</div>
+                ) : null}
+
               </div>
 
               <div className="col-12">
@@ -431,8 +473,8 @@ class Calculator extends Component {
                   <div className="input-group-prepend">
                     <span className="input-group-text bg-white"><FontAwesomeIcon icon="users" /></span>
                   </div>
-                  <select className="form-control custom-select form-control-success" placeholder="Number of children">
-                    <option value="-" disabled>Number of children</option>
+                  <select className="form-control custom-select form-control-success" placeholder="Number of children (under 18)">
+                    <option value="-">Number of children(under 18)</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
