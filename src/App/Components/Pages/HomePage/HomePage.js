@@ -43,7 +43,7 @@ export default class HomePage extends React.Component {
 
                       <div className="d-lg-none text-center">
                         <h1 className="h2">Compare loans up till AED600,000</h1>
-                        <b style={{ color: '#dc1f5b' }}>Free and only one <br />credit report</b>
+                        <b style={{ color: '#dc1f5b' }}>Free and only one credit report</b>
 
                         <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
