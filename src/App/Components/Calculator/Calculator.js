@@ -343,7 +343,6 @@ class Calculator extends Component {
                 <option value="" >Relationship status</option>
                 <option value="single">Single</option>
                 <option value="married">Married</option>
-                <option value="partner">Partner</option>
               </select>
             </div>
             {this.state.errors.relationshipStatus ? (
@@ -459,7 +458,6 @@ class Calculator extends Component {
                     <option value="" >Relationship status</option>
                     <option value="single">Single</option>
                     <option value="married">Married</option>
-                    <option value="partner">Partner</option>
                   </select>
                 </div>
                 {this.state.errors.relationshipStatus ? (
