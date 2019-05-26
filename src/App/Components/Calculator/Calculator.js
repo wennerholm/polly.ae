@@ -127,12 +127,13 @@ class Calculator extends Component {
       switchStateClass = classes.new;
     }
 
+
     return (
       <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '100%' }}>
         <div className={["d-flex", "align-items-center","text-center", classes.justifyContentSpaceEvenly].join(' ')}>
           <div className="col-611">
             <small style={{ color: '#9d9d9d' }}>Total loan amount</small>
-            <h2 className="mb-0">AED {this.state.loanAmount}</h2>
+            <h2 className="mb-0">AED {this.state.loanAmount.toLocaleString()}</h2>
           </div>
           <div className="col-611">
             <small style={{ color: '#9d9d9d' }}>Loan period</small>
@@ -163,7 +164,7 @@ class Calculator extends Component {
             xmin={10000}
             xmax={600000}
             x={this.state.loanAmount}
-            onChange={amount => this.setState({ loanAmount: amount.x })}
+            onChange={amount => this.setState({ loanAmount: amount.x})}
             styles={{
               active: {
                 backgroundColor: "#83db93",
@@ -186,7 +187,7 @@ class Calculator extends Component {
         <div className="row mt-2 text-center">
           <div className="col-12">
             <small style={{ color: '#9d9d9d' }}>Estimated monthly cost</small>
-            <h3 className="mb-0">AED {Math.floor(this.state.loanAmount / this.state.year / 12)}</h3>
+            <h3 className="mb-0">AED {Math.floor(this.state.loanAmount / this.state.year / 12).toLocaleString()}</h3>
           </div>
         </div>
 
@@ -234,7 +235,7 @@ class Calculator extends Component {
                   Of AED {this.state.loanAmount}, how much should go to collecting / redeeming
                   loans?
               </small>
-                <h2 className="mt-2 mb-0">{this.state.oldLoan}</h2>
+                <h2 className="mt-2 mb-0">{this.state.oldLoan.toLocaleString()}</h2>
               </div>
             </div>
 
