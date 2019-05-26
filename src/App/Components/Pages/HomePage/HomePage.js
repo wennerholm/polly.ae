@@ -31,8 +31,8 @@ export default class HomePage extends React.Component {
                   <div className={classes.flex}>
                     <div className={classes.flexyRow}>
                     <div className="d-none d-lg-block" style={{ maxWidth: '40%', }}>
-                        <h1 className="h2">Compare loans up till AED600,000</h1>
-                        <b style={{ color: '#dc1f5b' }}>Polly is free and only one credit report request is made</b>
+                      <h1 className="h2" style={{ fontSize: '45px' }}>Compare loans up till AED600,000</h1>
+                        <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Polly is free and only one credit report request is made</b>
 
                         <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
@@ -41,9 +41,9 @@ export default class HomePage extends React.Component {
                       </p>
                       </div>
 
-                      <div className="d-lg-none text-center">
-                        <h1 className="h2">Compare loans up till AED600,000</h1>
-                        <b style={{ color: '#dc1f5b' }}>Free and only one credit report</b>
+                    <div className="d-lg-none text-center pt-3">
+                      <h1 className="h2">Compare loans up till AED600,000</h1>
+                        <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Free and only one credit report</b>
 
                         <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
@@ -69,20 +69,44 @@ export default class HomePage extends React.Component {
         <section className="py-5 mt-5">
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
-                <div className={classes.creditWidthDiv}>
-                  <img src={require('../../../../assets/cibil-score.png')} alt="img"/>
+              <div className="col-12">
+                <h2 className="text-center p-0">How It Works</h2>
+                <Redline />
+              </div>
+            </div>
+
+            <div className="row mt-2">
+
+              <div className="col-md-4">
+                <div className={classes.stepTrust}>
+                  <img src={require('../../../../assets/steps/step-1.svg')} alt="step 1" />
+                  <p className={['text-center', classes.strong].join(' ')}>Start comparing</p>
+                  <p className="text-center">Complete your application online. It takes no more than 2 minutes and is <b>completely free!</b>.</p>
                 </div>
               </div>
-              <div className="col-md-6 mt-5">
-                <h5><b>What is the Credit Score?</b></h5>
-                <p>Credit Score is a three-digit number that predicts how likely you are to make your loan and credit card payments on time, the score ranges from 300 to 900. A low score indicates a higher risk, whereas a higher score indicates a lower risk.</p>
-                <h5 className="pt-3"><b>How is the Credit Score calculated?</b></h5>
-                <p>Your Credit Score is dynamic, and correspond to factors such as missed or delayed credit card payments, utilization of your credit card limits, or if you are taking on additional loans or credit cards.</p>
+
+              <div className="col-md-4">
+                <div className={classes.stepTrust}>
+                  <img src={require('../../../../assets/steps/step-3.svg')} alt="step 2" />
+                  <p className={['text-center', classes.strong].join(' ')}>The bank share their quotes</p>
+                  <p className="text-center">Poly compiles <b>quotes from over 15 banks</b>. You will receive your first quote usually within one hour.</p>
                 </div>
+              </div>
+
+              <div className="col-md-4">
+                <div className={classes.stepTrust}>
+                  <img src={require('../../../../assets/steps/step-4.svg')} alt="step 3" />
+                  <p className={['text-center', classes.strong].join(' ')}>You decide which bank to proceed with</p>
+                  <p className="text-center">Once you have reviewed the <b>best quotes</b>, you decide whether or not to proceed with a loan.
+                  Don't worry there are no fees regardless of your decision.</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
+
+       
 
 
         <section className="steps py-5  mb-5">
@@ -159,7 +183,7 @@ export default class HomePage extends React.Component {
           <div className="container">
             <div className="row text-center py-5">
               <div className="col-12">
-                <h2 className="text-white h4 font-weight-bold">When you take a loan, it is clear that you want to get the best possible interest rate.</h2>
+                <h2 className="text-white h4 font-weight-bold">If you are in the market for a Personal Loan, always ensure you compare the banks offering before deciding.</h2>
                 <p className="text-light mb-0">Polly offers a fast, free and safe solution for those who want to borrow money . What you are going to use the money for is up to you. By comparing personal loans with over 15 banks at the same time, we help you find the loan with the best terms and the lowest interest rate.</p>
               </div>
             </div>
@@ -169,39 +193,17 @@ export default class HomePage extends React.Component {
         <section className="py-5 mt-5">
           <div className="container">
             <div className="row">
-              <div className="col-12">
-                <h2 className="text-center p-0">How It Works</h2>
-                <Redline />
-              </div>
-            </div>
-
-            <div className="row mt-2">
-
-              <div className="col-md-4">
-                <div className={classes.stepTrust}>
-                  <img src={require('../../../../assets/steps/step-1.svg')} alt="step 1" />
-                  <p className={['text-center', classes.strong].join(' ')}>Start comparing</p>
-                  <p className="text-center">Complete your application online. It takes no more than 2 minutes and is <b>completely free!</b>.</p>
+              <div className="col-md-6">
+                <div className={classes.creditWidthDiv}>
+                  <img src={require('../../../../assets/cibil-score.png')} alt="img" />
                 </div>
               </div>
-
-              <div className="col-md-4">
-                <div className={classes.stepTrust}>
-                  <img src={require('../../../../assets/steps/step-3.svg')} alt="step 2" />
-                  <p className={['text-center', classes.strong].join(' ')}>The bank share their quotes</p>
-                  <p className="text-center">Poly compiles <b>quotes from over 15 banks</b>. You will receive your first quote usually within one hour.</p>
-                </div>
+              <div className="col-md-6 mt-5">
+                <h5><b>What is the Credit Score?</b></h5>
+                <p>Credit Score is a three-digit number that predicts how likely you are to make your loan and credit card payments on time, the score ranges from 300 to 900. A low score indicates a higher risk, whereas a higher score indicates a lower risk.</p>
+                <h5 className="pt-3"><b>How is the Credit Score calculated?</b></h5>
+                <p>Your Credit Score is dynamic, and correspond to factors such as missed or delayed credit card payments, utilization of your credit card limits, or if you are taking on additional loans or credit cards.</p>
               </div>
-
-              <div className="col-md-4">
-                <div className={classes.stepTrust}>
-                  <img src={require('../../../../assets/steps/step-4.svg')} alt="step 3" />
-                  <p className={['text-center', classes.strong].join(' ')}>You decide which bank to proceed with</p>
-                  <p className="text-center">Once you have reviewed the <b>best quotes</b>, you decide whether or not to proceed with a loan.
-                  Don't worry there are no fees regardless of your decision.</p>
-                </div>
-              </div>
-
             </div>
           </div>
         </section>
