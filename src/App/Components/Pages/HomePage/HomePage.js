@@ -233,7 +233,7 @@ export default class HomePage extends React.Component {
 
                     <div className="mt-3" style={{ display: this.state.questions.one ? 'block' : 'none' }}>
                       <ul> <li>You must above 21 years of age</li>
-                        <li>Have a minimum monthly salary of AED7,000</li>
+                        <li>Have a minimum monthly salary of AED3,000</li>
                         <li>Hold a valid UAE residence Visa & Emirates ID</li>
                         <li>Salary transfer may be required</li>
                         </ul>
@@ -267,7 +267,7 @@ export default class HomePage extends React.Component {
               </div>
 
               <div className="col-md-6">
-                <hr />
+                <hr className="d-none d-lg-block" />
                 <div className="row">
                   <div className="col-lg-12">
                     <h4 className={[classes.accordion, 'h5', this.state.questions.three ? classes.accordionOpen : classes.accordionClosed].join(' ')} onClick={() => {
