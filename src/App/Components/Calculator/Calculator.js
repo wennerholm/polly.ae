@@ -133,7 +133,7 @@ class Calculator extends Component {
         <div className={["d-flex", "align-items-center","text-center", classes.justifyContentSpaceEvenly].join(' ')}>
           <div className="col-611">
             <small style={{ color: '#9d9d9d' }}>Total loan amount</small>
-            <h2 className="mb-0">AED {this.state.loanAmount.toLocaleString()}</h2>
+            <h4 className="mb-0 font-weight-bold">AED {this.state.loanAmount.toLocaleString()}</h4>
           </div>
           <div className="col-611">
             <small style={{ color: '#9d9d9d' }}>Loan period</small>
@@ -146,7 +146,7 @@ class Calculator extends Component {
                   <path fill="#f89838" d="M19,13H5V11H19V13Z" />
                 </svg>
               </button>
-              <h2 className="d-inline font-weight-normal h4 mx-1">{this.state.year} year</h2>
+              <h4 className="d-inline font-weight-normal h4 mx-1">{this.state.year} year</h4>
               <button onClick={this.increaseYear} className={classes.btnRound}>
                 <svg viewBox="0 0 24 24">
                   <path fill="#f89838" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path>
@@ -187,7 +187,7 @@ class Calculator extends Component {
         <div className="row mt-2 text-center">
           <div className="col-12">
             <small style={{ color: '#9d9d9d' }}>Estimated monthly cost</small>
-            <h3 className="mb-0">AED {Math.floor(this.state.loanAmount / this.state.year / 12).toLocaleString()}</h3>
+            <h4 className="mb-0">AED {Math.floor(this.state.loanAmount / this.state.year / 12).toLocaleString()}</h4>
           </div>
         </div>
 
