@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "75cf6689df6458513c370fa8407de7d4",
+    "revision": "585b89b36235785485c13ca5c81e3764",
     "url": "/polly/index.html"
   },
   {
-    "revision": "20686477f9dbb966362e",
+    "revision": "7feed2ad4e154121a542",
     "url": "/polly/static/css/main.74f21cd2.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/polly/static/js/2.e71f936e.chunk.js"
   },
   {
-    "revision": "20686477f9dbb966362e",
-    "url": "/polly/static/js/main.3b8c84dc.chunk.js"
+    "revision": "7feed2ad4e154121a542",
+    "url": "/polly/static/js/main.7cfcd061.chunk.js"
   },
   {
     "revision": "8c13fe2f932280eb318f",
@@ -80,16 +80,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/polly/static/media/graphic.2e12b7e3.png"
   },
   {
-    "revision": "f6dc4d9c23a19e927c5ce5868bcdb5ea",
-    "url": "/polly/static/media/step-1.f6dc4d9c.svg"
+    "revision": "805cb7c95f0086b21499c802b3f01a41",
+    "url": "/polly/static/media/step-1.805cb7c9.svg"
   },
   {
     "revision": "042c7aa90d9888eb0003b51b4895565c",
     "url": "/polly/static/media/step-3.042c7aa9.svg"
   },
   {
-    "revision": "431b94469e2571156b70960e27880559",
-    "url": "/polly/static/media/step-4.431b9446.svg"
+    "revision": "7cd679f2af861ed777b75c20f882a10d",
+    "url": "/polly/static/media/step-4.7cd679f2.svg"
   },
   {
     "revision": "dcb9153df67d432f8e287f6138c8891e",
