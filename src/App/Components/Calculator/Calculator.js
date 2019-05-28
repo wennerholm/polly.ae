@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Calculator extends Component {
   state = {
     loanAmount: 150000,
-    year: 12,
+    year: 3,
     oldLoan: 150000,
     errors: {},
     applicant: {},
@@ -21,7 +21,7 @@ class Calculator extends Component {
     var year = this.state.year;
     year++;
 
-    if (this.state.year < 30) {
+    if (this.state.year < 6) {
       this.setState({ year: year });
     }
   };
