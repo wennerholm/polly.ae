@@ -20,7 +20,7 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <Aux>
-        <header className={classes.hero}>
+        <header className={[classes.hero, classes.paddingtopxl].join(' ')}>
           <div className={classes.flexyRow}>
 
             <div className={[classes.flex, 'd-none', 'd-xl-flex'].join(' ')}></div>
@@ -96,7 +96,7 @@ export default class HomePage extends React.Component {
               <div className="col-md-4">
                 <div className={classes.stepTrust}>
                   <img src={require('../../../../assets/steps/step-4.svg')} alt="step 3" />
-                  <p className={['text-center', classes.strong].join(' ')}>You decide which bank to proceed with</p>
+                  <p className={['text-center', classes.strong].join(' ')}>You choose the bank</p>
                   <p className="text-center">Once you have reviewed the <b>best quotes</b>, you decide whether or not to proceed with a loan.
                   Don't worry there are no fees regardless of your decision.</p>
                 </div>

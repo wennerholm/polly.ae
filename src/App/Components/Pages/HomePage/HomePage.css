@@ -228,6 +228,11 @@ img {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
+  
+  .paddingtopxl {
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    padding-top: 90px;
+  }
 }
 
 .x3 {
@@ -243,4 +248,6 @@ img {
 .arrowColor{
   color:#FF3926;
 }
+
+ 
 

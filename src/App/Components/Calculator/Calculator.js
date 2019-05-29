@@ -232,8 +232,7 @@ class Calculator extends Component {
             <div className="row justify-content-center align-items-center mt-3">
               <div className="col-12 text-center">
                 <small>
-                  Of AED {this.state.loanAmount}, how much should go to collecting / redeeming
-                  loans?
+                  Of AED {this.state.loanAmount.toLocaleString()} how much is required for consolidating existing loans?
               </small>
                 <h2 className="mt-2 mb-0">{this.state.oldLoan.toLocaleString()}</h2>
               </div>
@@ -264,7 +263,7 @@ class Calculator extends Component {
                   }
                 }}
               />
-              <span className="ml-3 small" style={{ color: '#9d9d9d' }}>{this.state.loanAmount}</span>
+              <span className="ml-3 small" style={{ color: '#9d9d9d' }}>{this.state.loanAmount.toLocaleString()}</span>
             </div>
           </Aux>
         ) : null}
