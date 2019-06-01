@@ -232,7 +232,7 @@ class Calculator extends Component {
             <div className="row justify-content-center align-items-center mt-3">
               <div className="col-12 text-center">
                 <small>
-                  Of AED {this.state.loanAmount.toLocaleString()} how much is required for consolidating existing loans?
+                  of AED {this.state.loanAmount.toLocaleString()} how much is required for consolidating existing loans?
               </small>
                 <h2 className="mt-2 mb-0">{this.state.oldLoan.toLocaleString()}</h2>
               </div>

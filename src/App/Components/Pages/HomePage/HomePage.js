@@ -81,7 +81,7 @@ export default class HomePage extends React.Component {
                 <div className={classes.stepTrust}>
                   <img src={require('../../../../assets/steps/step-1.svg')} alt="step 1" />
                   <p className={['text-center', classes.strong].join(' ')}>Start comparing</p>
-                  <p className="text-center">Complete your application online. It takes no more than 2 minutes and is <b>completely free!</b>.</p>
+                  <p className="text-center">Complete your application online. It takes no more than 2 minutes and is <b>completely free!</b></p>
                 </div>
               </div>
 
@@ -254,7 +254,7 @@ export default class HomePage extends React.Component {
 
                     <div className="mt-3" style={{ display: this.state.questions.two ? 'block' : 'none' }}>
                       <p>Yes! Even though you will potentially receive quotes from up to 30 banks, only one request is made for your Credit Report from Al Etihad Credit Bureau. Banks may require further information in regards to your application to ensure a well-informed credit assessment.</p>
-                      <p>To maximise the chances to submit a successful application we recommend to add an co-applicant, as this drastically increases your credit profile which not only makes you more eligible for a loan, but can also reduce you interest rate!</p>
+                      <p>To maximise the chances to submit a successful application we recommend to add an co-applicant, as this drastically enhances your credit profile which not only makes you more eligible for a loan, but can also reduce your interest rate!</p>
                       </div>
                   </div>
 
@@ -294,7 +294,7 @@ export default class HomePage extends React.Component {
                     }}>How can Polly be a free service?</h4>
 
                     <div className="mt-3" style={{ display: this.state.questions.four ? 'block' : 'none' }}>
-                      <p>Polly receives commission from the bank that you choose to be your loan provider. There are no surcharges such as increased interest or other fees when your using Polly. Essentially we are acting as a marketplace for banks and they pay commission if a successful loan applicant is found via Polly, just like they would spend money on any advertising platform.</p>
+                      <p>Polly receives commission from the bank that you choose to be your loan provider. There are no surcharges such as increased interest rate or other fees when you are using Polly. Essentially we are acting as a marketplace for banks and they pay commission if a successful loan applicant is found via Polly, just like they would spend money on any advertising platform.</p>
                     </div>
                   </div>
 
