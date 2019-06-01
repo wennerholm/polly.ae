@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Calculator extends Component {
   state = {
     loanAmount: 150000,
-    year: 12,
+    year: 3,
     oldLoan: 150000,
     errors: {},
     applicant: {},
@@ -21,7 +21,7 @@ class Calculator extends Component {
     var year = this.state.year;
     year++;
 
-    if (this.state.year < 30) {
+    if (this.state.year < 6) {
       this.setState({ year: year });
     }
   };
@@ -127,12 +127,13 @@ class Calculator extends Component {
       switchStateClass = classes.new;
     }
 
+
     return (
       <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '100%' }}>
         <div className={["d-flex", "align-items-center","text-center", classes.justifyContentSpaceEvenly].join(' ')}>
           <div className="col-611">
             <small style={{ color: '#9d9d9d' }}>Total loan amount</small>
-            <h2 className="mb-0">AED {this.state.loanAmount}</h2>
+            <h4 className="mb-0 font-weight-bold">AED {this.state.loanAmount.toLocaleString()}</h4>
           </div>
           <div className="col-611">
             <small style={{ color: '#9d9d9d' }}>Loan period</small>
@@ -145,7 +146,7 @@ class Calculator extends Component {
                   <path fill="#f89838" d="M19,13H5V11H19V13Z" />
                 </svg>
               </button>
-              <h2 className="d-inline font-weight-normal h4 mx-1">{this.state.year} year</h2>
+              <h4 className="d-inline font-weight-normal h4 mx-1">{this.state.year} year</h4>
               <button onClick={this.increaseYear} className={classes.btnRound}>
                 <svg viewBox="0 0 24 24">
                   <path fill="#f89838" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path>
@@ -163,7 +164,7 @@ class Calculator extends Component {
             xmin={10000}
             xmax={600000}
             x={this.state.loanAmount}
-            onChange={amount => this.setState({ loanAmount: amount.x })}
+            onChange={amount => this.setState({ loanAmount: amount.x})}
             styles={{
               active: {
                 backgroundColor: "#83db93",
@@ -186,7 +187,7 @@ class Calculator extends Component {
         <div className="row mt-2 text-center">
           <div className="col-12">
             <small style={{ color: '#9d9d9d' }}>Estimated monthly cost</small>
-            <h3 className="mb-0">AED {Math.floor(this.state.loanAmount / this.state.year / 12)}</h3>
+            <h4 className="mb-0">AED {Math.floor(this.state.loanAmount / this.state.year / 12).toLocaleString()}</h4>
           </div>
         </div>
 
@@ -231,10 +232,9 @@ class Calculator extends Component {
             <div className="row justify-content-center align-items-center mt-3">
               <div className="col-12 text-center">
                 <small>
-                  Of AED {this.state.loanAmount}, how much should go to collecting / redeeming
-                  loans?
+                  of AED {this.state.loanAmount.toLocaleString()} how much is required for consolidating existing loans?
               </small>
-                <h2 className="mt-2 mb-0">{this.state.oldLoan}</h2>
+                <h2 className="mt-2 mb-0">{this.state.oldLoan.toLocaleString()}</h2>
               </div>
             </div>
 
@@ -263,7 +263,7 @@ class Calculator extends Component {
                   }
                 }}
               />
-              <span className="ml-3 small" style={{ color: '#9d9d9d' }}>{this.state.loanAmount}</span>
+              <span className="ml-3 small" style={{ color: '#9d9d9d' }}>{this.state.loanAmount.toLocaleString()}</span>
             </div>
           </Aux>
         ) : null}
@@ -343,7 +343,6 @@ class Calculator extends Component {
                 <option value="" >Relationship status</option>
                 <option value="single">Single</option>
                 <option value="married">Married</option>
-                <option value="partner">Partner</option>
               </select>
             </div>
             {this.state.errors.relationshipStatus ? (
@@ -365,7 +364,7 @@ class Calculator extends Component {
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-                <option value="6">6</option>
+                <option value="6">6+</option>
               </select>
             </div>
             {this.state.errors.children ? (
@@ -459,7 +458,6 @@ class Calculator extends Component {
                     <option value="" >Relationship status</option>
                     <option value="single">Single</option>
                     <option value="married">Married</option>
-                    <option value="partner">Partner</option>
                   </select>
                 </div>
                 {this.state.errors.relationshipStatus ? (
@@ -481,7 +479,7 @@ class Calculator extends Component {
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                    <option value="6">6</option>
+                    <option value="6">6+</option>
                   </select>
                 </div>
                 {this.state.errors.children ? (

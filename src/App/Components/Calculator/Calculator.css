@@ -231,3 +231,7 @@
     border-radius: 2px;
     border: 1px inset rgba(0,0,0,0.26);
 }
+
+.radiusNone {
+   border-radius: none !important;
+}

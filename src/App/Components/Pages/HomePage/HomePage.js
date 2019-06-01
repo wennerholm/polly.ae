@@ -20,7 +20,7 @@ export default class HomePage extends React.Component {
   render() {
     return (
       <Aux>
-        <header className={classes.hero}>
+        <header className={[classes.hero, classes.paddingtopxl].join(' ')}>
           <div className={classes.flexyRow}>
 
             <div className={[classes.flex, 'd-none', 'd-xl-flex'].join(' ')}></div>
@@ -31,8 +31,8 @@ export default class HomePage extends React.Component {
                   <div className={classes.flex}>
                     <div className={classes.flexyRow}>
                     <div className="d-none d-lg-block" style={{ maxWidth: '40%', }}>
-                        <h1 className="h2">Compare loans up till AED600,000</h1>
-                        <b style={{ color: '#dc1f5b' }}>Polly is free and only one credit report request is made</b>
+                      <h1 className="h2" style={{ fontSize: '45px' }}>Compare loans up till AED600,000</h1>
+                        <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Polly is free and only one credit report request is made</b>
 
                         <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
@@ -41,9 +41,9 @@ export default class HomePage extends React.Component {
                       </p>
                       </div>
 
-                      <div className="d-lg-none text-center">
-                        <h1 className="h2">Compare loans up till AED600,000</h1>
-                        <b style={{ color: '#dc1f5b' }}>Free and only one credit report</b>
+                    <div className="d-lg-none text-center pt-3">
+                      <h1 className="h2">Compare loans up till AED600,000</h1>
+                        <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Free and only one credit report</b>
 
                         <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
@@ -69,20 +69,44 @@ export default class HomePage extends React.Component {
         <section className="py-5 mt-5">
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
-                <div className={classes.creditWidthDiv}>
-                  <img src={require('../../../../assets/cibil-score.png')} alt="img"/>
+              <div className="col-12">
+                <h2 className="text-center p-0">How It Works</h2>
+                <Redline />
+              </div>
+            </div>
+
+            <div className="row mt-2">
+
+              <div className="col-md-4">
+                <div className={classes.stepTrust}>
+                  <img src={require('../../../../assets/steps/step-1.svg')} alt="step 1" />
+                  <p className={['text-center', classes.strong].join(' ')}>Start comparing</p>
+                  <p className="text-center">Complete your application online. It takes no more than 2 minutes and is <b>completely free!</b></p>
                 </div>
               </div>
-              <div className="col-md-6 mt-5">
-                <h5><b>What is the Credit Score?</b></h5>
-                <p>Credit Score is a three-digit number that predicts how likely you are to make your loan and credit card payments on time, the score ranges from 300 to 900. A low score indicates a higher risk, whereas a higher score indicates a lower risk.</p>
-                <h5 className="pt-3"><b>How is the Credit Score calculated?</b></h5>
-                <p>Your Credit Score is dynamic, and correspond to factors such as missed or delayed credit card payments, utilization of your credit card limits, or if you are taking on additional loans or credit cards.</p>
+
+              <div className="col-md-4">
+                <div className={classes.stepTrust}>
+                  <img src={require('../../../../assets/steps/step-3.svg')} alt="step 2" />
+                  <p className={['text-center', classes.strong].join(' ')}>The bank share their quotes</p>
+                  <p className="text-center">Poly compiles <b>quotes from over 15 banks</b>. You will receive your first quote usually within one hour.</p>
                 </div>
+              </div>
+
+              <div className="col-md-4">
+                <div className={classes.stepTrust}>
+                  <img src={require('../../../../assets/steps/step-4.svg')} alt="step 3" />
+                  <p className={['text-center', classes.strong].join(' ')}>You choose the bank</p>
+                  <p className="text-center">Once you have reviewed the <b>best quotes</b>, you decide whether or not to proceed with a loan.
+                  Don't worry there are no fees regardless of your decision.</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
+
+       
 
 
         <section className="steps py-5  mb-5">
@@ -159,7 +183,7 @@ export default class HomePage extends React.Component {
           <div className="container">
             <div className="row text-center py-5">
               <div className="col-12">
-                <h2 className="text-white h4 font-weight-bold">When you take a loan, it is clear that you want to get the best possible interest rate.</h2>
+                <h2 className="text-white h4 font-weight-bold">If you are in the market for a Personal Loan, always ensure you compare the banks offering before deciding.</h2>
                 <p className="text-light mb-0">Polly offers a fast, free and safe solution for those who want to borrow money . What you are going to use the money for is up to you. By comparing personal loans with over 15 banks at the same time, we help you find the loan with the best terms and the lowest interest rate.</p>
               </div>
             </div>
@@ -169,39 +193,17 @@ export default class HomePage extends React.Component {
         <section className="py-5 mt-5">
           <div className="container">
             <div className="row">
-              <div className="col-12">
-                <h2 className="text-center p-0">How It Works</h2>
-                <Redline />
-              </div>
-            </div>
-
-            <div className="row mt-2">
-
-              <div className="col-md-4">
-                <div className={classes.stepTrust}>
-                  <img src={require('../../../../assets/steps/step-1.svg')} alt="step 1" />
-                  <p className={['text-center', classes.strong].join(' ')}>Start comparing</p>
-                  <p className="text-center">Complete your application online. It takes no more than 2 minutes and is <b>completely free!</b>.</p>
+              <div className="col-md-6">
+                <div className={classes.creditWidthDiv}>
+                  <img src={require('../../../../assets/cibil-score.png')} alt="img" />
                 </div>
               </div>
-
-              <div className="col-md-4">
-                <div className={classes.stepTrust}>
-                  <img src={require('../../../../assets/steps/step-3.svg')} alt="step 2" />
-                  <p className={['text-center', classes.strong].join(' ')}>The bank share their quotes</p>
-                  <p className="text-center">Poly compiles <b>quotes from over 15 banks</b>. You will receive your first quote usually within one hour.</p>
-                </div>
+              <div className="col-md-6 mt-5">
+                <h5><b>What is the Credit Score?</b></h5>
+                <p>Credit Score is a three-digit number that predicts how likely you are to make your loan and credit card payments on time, the score ranges from 300 to 900. A low score indicates a higher risk, whereas a higher score indicates a lower risk.</p>
+                <h5 className="pt-3"><b>How is the Credit Score calculated?</b></h5>
+                <p>Your Credit Score is dynamic, and correspond to factors such as missed or delayed credit card payments, utilization of your credit card limits, or if you are taking on additional loans or credit cards.</p>
               </div>
-
-              <div className="col-md-4">
-                <div className={classes.stepTrust}>
-                  <img src={require('../../../../assets/steps/step-4.svg')} alt="step 3" />
-                  <p className={['text-center', classes.strong].join(' ')}>You decide which bank to proceed with</p>
-                  <p className="text-center">Once you have reviewed the <b>best quotes</b>, you decide whether or not to proceed with a loan.
-                  Don't worry there are no fees regardless of your decision.</p>
-                </div>
-              </div>
-
             </div>
           </div>
         </section>
@@ -231,7 +233,7 @@ export default class HomePage extends React.Component {
 
                     <div className="mt-3" style={{ display: this.state.questions.one ? 'block' : 'none' }}>
                       <ul> <li>You must above 21 years of age</li>
-                        <li>Have a minimum monthly salary of AED7,000</li>
+                        <li>Have a minimum monthly salary of AED3,000</li>
                         <li>Hold a valid UAE residence Visa & Emirates ID</li>
                         <li>Salary transfer may be required</li>
                         </ul>
@@ -252,7 +254,7 @@ export default class HomePage extends React.Component {
 
                     <div className="mt-3" style={{ display: this.state.questions.two ? 'block' : 'none' }}>
                       <p>Yes! Even though you will potentially receive quotes from up to 30 banks, only one request is made for your Credit Report from Al Etihad Credit Bureau. Banks may require further information in regards to your application to ensure a well-informed credit assessment.</p>
-                      <p>To maximise the chances to submit a successful application we recommend to add an co-applicant, as this drastically increases your credit profile which not only makes you more eligible for a loan, but can also reduce you interest rate!</p>
+                      <p>To maximise the chances to submit a successful application we recommend to add an co-applicant, as this drastically enhances your credit profile which not only makes you more eligible for a loan, but can also reduce your interest rate!</p>
                       </div>
                   </div>
 
@@ -265,7 +267,7 @@ export default class HomePage extends React.Component {
               </div>
 
               <div className="col-md-6">
-                <hr />
+                <hr className="d-none d-lg-block" />
                 <div className="row">
                   <div className="col-lg-12">
                     <h4 className={[classes.accordion, 'h5', this.state.questions.three ? classes.accordionOpen : classes.accordionClosed].join(' ')} onClick={() => {
@@ -292,7 +294,7 @@ export default class HomePage extends React.Component {
                     }}>How can Polly be a free service?</h4>
 
                     <div className="mt-3" style={{ display: this.state.questions.four ? 'block' : 'none' }}>
-                      <p>Polly receives commission from the bank that you choose to be your loan provider. There are no surcharges such as increased interest or other fees when your using Polly. Essentially we are acting as a marketplace for banks and they pay commission if a successful loan applicant is found via Polly, just like they would spend money on any advertising platform.</p>
+                      <p>Polly receives commission from the bank that you choose to be your loan provider. There are no surcharges such as increased interest rate or other fees when you are using Polly. Essentially we are acting as a marketplace for banks and they pay commission if a successful loan applicant is found via Polly, just like they would spend money on any advertising platform.</p>
                     </div>
                   </div>
 
