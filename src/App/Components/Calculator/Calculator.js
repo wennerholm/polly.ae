@@ -275,7 +275,7 @@ class Calculator extends Component {
           <div className="col-12">
             <div className="input-group">
               <div className="input-group-prepend">
-                <span className="input-group-text bg-white"><FontAwesomeIcon icon="user" /></span>
+                <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="user" /></span>
               </div>
               <input type="text" className="form-control" placeholder="Emirates ID number (xxx-xxxx-xxxxxxx-x)" />
             </div>
@@ -288,7 +288,7 @@ class Calculator extends Component {
           <div className="col-12">
             <div className="input-group">
               <div className="input-group-prepend">
-                <span className="input-group-text bg-white"><FontAwesomeIcon icon="phone" /></span>
+                <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="phone" /></span>
               </div>
               <input type="text" className="form-control" placeholder="Mobile number (+971 5X XXXXXXX)" />
             </div>
@@ -300,7 +300,7 @@ class Calculator extends Component {
           <div className="col-12">
             <div className="input-group">
               <div className="input-group-prepend">
-                <span className="input-group-text bg-white"><FontAwesomeIcon icon="envelope" /></span>
+                <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="envelope" /></span>
               </div>
               <input type="text" className="form-control" placeholder="Email address" />
             </div>
@@ -312,7 +312,7 @@ class Calculator extends Component {
           <div className="col-12">
             <div className="input-group">
               <div className="input-group-prepend">
-                <span className="input-group-text bg-white"><FontAwesomeIcon icon="briefcase" /></span>
+                <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="briefcase" /></span>
               </div>
               <select className="form-control custom-select form-control-success" placeholder="Employment type" onChange={(event) => this.setState({ applicant: { ...this.state.applicant, job: event.target.value } })} value={this.state.applicant.job}>
                 <option value="" >Type of employment</option>
@@ -337,7 +337,7 @@ class Calculator extends Component {
           <div className="col-12">
             <div className="input-group">
               <div className="input-group-prepend">
-                <span className="input-group-text bg-white"><FontAwesomeIcon icon="user-friends" /></span>
+                <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="user-friends" /></span>
               </div>
               <select className="form-control custom-select form-control-success" placeholder="Relationship status" >
                 <option value="" >Relationship status</option>
@@ -355,7 +355,7 @@ class Calculator extends Component {
           <div className="col-12">
             <div className="input-group">
               <div className="input-group-prepend">
-                <span className="input-group-text bg-white"><FontAwesomeIcon icon="users" /></span>
+                <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="users" /></span>
               </div>
               <select className="form-control custom-select form-control-success" placeholder="Number of children (under 18)">
                 <option value="-">Number of children(under 18)</option>
@@ -391,7 +391,7 @@ class Calculator extends Component {
               <div className="col-12">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="user" /></span>
+                    <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="user" /></span>
                   </div>
                   <input type="text" className="form-control" placeholder="Emirates ID number (xxx-xxxx-xxxxxxx-x)" />
                 </div>
@@ -404,7 +404,7 @@ class Calculator extends Component {
               <div className="col-12">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="phone" /></span>
+                    <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="phone" /></span>
                   </div>
                   <input type="text" className="form-control" placeholder="Mobile number (+971 5X XXXXXXX)" />
                 </div>
@@ -416,7 +416,7 @@ class Calculator extends Component {
               <div className="col-12">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="envelope" /></span>
+                    <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="envelope" /></span>
                   </div>
                   <input type="text" className="form-control" placeholder="Email address" />
                 </div>
@@ -428,7 +428,7 @@ class Calculator extends Component {
               <div className="col-12">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="briefcase" /></span>
+                    <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="briefcase" /></span>
                   </div>
                   <select className="form-control custom-select form-control-success" placeholder="Employment type" onChange={(event) => this.setState({ applicant: { ...this.state.applicant, job: event.target.value } })} value={this.state.applicant.job}>
                     <option value="" >Type of employment</option>
@@ -453,7 +453,7 @@ class Calculator extends Component {
               <div className="col-12">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="user-friends" /></span>
+                    <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="user-friends" /></span>
                   </div>
                   <select className="form-control custom-select form-control-success" placeholder="Relationship status" >
                     <option value="" >Relationship status</option>
@@ -471,7 +471,7 @@ class Calculator extends Component {
               <div className="col-12">
                 <div className="input-group">
                   <div className="input-group-prepend">
-                    <span className="input-group-text bg-white"><FontAwesomeIcon icon="users" /></span>
+                    <span className={['input-group-text', 'bg-white', 'justify-content-center', classes.mw46].join(' ')}><FontAwesomeIcon icon="users" /></span>
                   </div>
                   <select className="form-control custom-select form-control-success" placeholder="Number of children (under 18)">
                     <option value="-">Number of children(under 18)</option>

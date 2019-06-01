@@ -24,3 +24,6 @@ code {
   border-radius: 40px !important;
   cursor: pointer;
 }
+.mw-50 {
+  min-width: 47px;
+}
