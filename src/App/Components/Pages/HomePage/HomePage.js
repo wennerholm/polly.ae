@@ -89,7 +89,7 @@ export default class HomePage extends React.Component {
                 <div className={classes.stepTrust}>
                   <img src={require('../../../../assets/steps/step-3.svg')} alt="step 2" />
                   <p className={['text-center', classes.strong].join(' ')}>The bank share their quotes</p>
-                  <p className="text-center">Poly compiles <b>quotes from over 15 banks</b>. You will receive your first quote usually within one hour.</p>
+                  <p className="text-center">Polly collect <b>quotes from over 15 banks</b>. You will receive your first quote usually within one hour.</p>
                 </div>
               </div>
 
