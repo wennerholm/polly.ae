@@ -19,6 +19,9 @@
     color: #000000;
     min-width: 360px;
 }
+.mw46 {
+    min-width: 47px;
+}
 @media (min-width: 992px) {
     .Calculator {
         max-width: 500px!important;
