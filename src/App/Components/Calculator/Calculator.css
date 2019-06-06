@@ -120,7 +120,6 @@
 .btnRound {
     cursor: pointer;
     position: relative;
-    width: 28px;
     height: 28px;
     text-align: center;
     border: 2px solid transparent;
@@ -130,7 +129,7 @@
     background-clip: padding-box;
 }
 
-.btnRound::after {
+/* .btnRound::after {
     position: absolute;
     top: -2px;
     bottom: -2px;
@@ -141,9 +140,9 @@
     content: '';
     z-index: -1;
     border-radius: 16px;
-}
+} */
 
-.btnRound svg {
+/* .btnRound svg {
     max-width: 100%;
     display: block;
     width: 99%;
@@ -151,7 +150,7 @@
     -ms-transform: scale(3);
     transform: scale(3);
     -webkit-transform: scale(2);
-}
+} */
 
 .coApp {
     -webkit-user-select: none;
