@@ -142,11 +142,11 @@ class Calculator extends Component {
                 onClick={this.decreaseYear}
                 className={classes.btnRound}
               >
-                <img style={{ marginTop: '-8px' }} src={require('../../../assets/minus.PNG')} alt="minus" />
+                <img style={{ marginTop: '-3px' }} src={require('../../../assets/minus.PNG')} alt="minus" />
               </button>
               <h4 className="d-inline font-weight-normal h4">{this.state.year} year</h4>
               <button onClick={this.increaseYear} className={classes.btnRound}>
-                <img style={{ marginTop: '-7px' }} src={require('../../../assets/plus.PNG')} alt="plus" />
+                <img style={{ marginTop: '-3px' }} src={require('../../../assets/plus.PNG')} alt="plus" />
               </button>
             </div>
           </div>
