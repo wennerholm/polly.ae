@@ -120,6 +120,7 @@
 .btnRound {
     cursor: pointer;
     position: relative;
+    width: 28px;
     height: 28px;
     text-align: center;
     border: 2px solid transparent;
@@ -129,7 +130,7 @@
     background-clip: padding-box;
 }
 
-/* .btnRound::after {
+.btnRound::after {
     position: absolute;
     top: -2px;
     bottom: -2px;
@@ -140,7 +141,7 @@
     content: '';
     z-index: -1;
     border-radius: 16px;
-} */
+}
 
 /* .btnRound svg {
     max-width: 100%;
@@ -234,3 +235,23 @@
 .radiusNone {
    border-radius: none !important;
 }
+
+@media (max-width: 1199px){
+    .btnSvg {
+    width: 99%;
+    height: 100%;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+}
+
+.btnSvg {
+    width: 99%;
+    height: 100%;
+    -ms-transform: scale(3);
+    transform: scale(3);
+    -webkit-transform: scale(2);
+    display: block;
+}
+

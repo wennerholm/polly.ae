@@ -142,11 +142,13 @@ class Calculator extends Component {
                 onClick={this.decreaseYear}
                 className={classes.btnRound}
               >
-                <img style={{ marginTop: '-3px' }} src={require('../../../assets/minus.PNG')} alt="minus" />
+                {/* <img style={{maxWidth: '30px' }} src={require('../../../assets/minus.PNG')} alt="minus" /> */} 
+                <svg className={classes.btnSvg} viewBox="0 0 24 24"><path fill="#f89838" d="M19,13H5V11H19V13Z"></path></svg>
               </button>
-              <h4 className="d-inline font-weight-normal h4">{this.state.year} year</h4>
+              <h4 className="d-inline font-weight-normal h4" style={{marginLeft: '4px', marginRight: '4px'}}>{this.state.year} year</h4>
               <button onClick={this.increaseYear} className={classes.btnRound}>
-                <img style={{ marginTop: '-3px' }} src={require('../../../assets/plus.PNG')} alt="plus" />
+                {/* <img style={{ maxWidth: '30px' }} src={require('../../../assets/plus.PNG')} alt="plus" /> */}
+                <svg className={classes.btnSvg} viewBox="0 0 24 24"><path fill="#f89838" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path></svg>
               </button>
             </div>
           </div>
