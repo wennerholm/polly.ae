@@ -184,7 +184,7 @@ export default class HomePage extends React.Component {
             <div className="row text-center py-5">
               <div className="col-12">
                 <h2 className="text-white h4 font-weight-bold">If you are in the market for a Personal Loan, always ensure you compare the banks offering before deciding.</h2>
-                <p className="text-light mb-0">Polly offers a fast, free and safe solution for those who want to borrow money . What you are going to use the money for is up to you. By comparing personal loans with over 15 banks at the same time, we help you find the loan with the best terms and the lowest interest rate.</p>
+                <p className="text-light mb-0">Polly offers a fast, free and safe solution for those who want to borrow money. What you are going to use the money for is up to you. By comparing personal loans with over 15 banks at the same time, we help you find the loan with the best terms and the lowest interest rate.</p>
               </div>
             </div>
           </div>

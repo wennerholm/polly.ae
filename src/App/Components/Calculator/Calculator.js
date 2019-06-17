@@ -130,26 +130,32 @@ class Calculator extends Component {
 
     return (
       <div className={classes.Calculator} style={{ width: this.props.style.width ? this.props.style.width : '100%', maxWidth: this.props.style.maxWidth ? this.props.style.maxWidth : '100%' }}>
-        <div className={["d-flex", "align-items-center","text-center", classes.justifyContentSpaceEvenly].join(' ')}>
-          <div className="col-611">
+        <div className={["d-flex", "align-items-center", "text-center", classes.calcFirst].join(' ')}>
+          <div className={classes.flex}>
             <small style={{ color: '#9d9d9d' }}>Total loan amount</small>
             <h4 className="mb-0 font-weight-bold">AED {this.state.loanAmount.toLocaleString()}</h4>
           </div>
-          <div className="col-611">
+          <div className={classes.flex}>
             <small style={{ color: '#9d9d9d' }}>Loan period</small>
-            <div>
-              <button
-                onClick={this.decreaseYear}
-                className={classes.btnRound}
-              >
-                {/* <img style={{maxWidth: '30px', display: 'block' }} src={require('../../../assets/minus.PNG')} alt="minus" />  */}
-                <svg className={classes.btnSvg} viewBox="0 0 24 24"><path fill="#f89838" d="M19,13H5V11H19V13Z"></path></svg>
-              </button>
-              <h4 className="d-inline font-weight-normal h4" style={{marginLeft: '0px', marginRight: '0px'}}>{this.state.year} year</h4>
-              <button onClick={this.increaseYear} className={classes.btnRound}>
-                {/* <img style={{ maxWidth: '30px', display: 'block' }} src={require('../../../assets/plus.PNG')} alt="plus" /> */}
-                <svg className={classes.btnSvg} viewBox="0 0 24 24"><path fill="#f89838" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path></svg>
-              </button>
+            <div className={classes.loanTypeControlls}>
+              <span>
+                <button
+                  onClick={this.decreaseYear}
+                  className={classes.btnRound}
+                >
+                  {/*<img style={{maxWidth: '30px', display: 'block' }} src={require('../../../assets/minus.PNG')} alt="minus" /> */}
+                  <svg className={classes.btnSvg} viewBox="0 0 24 24"><path fill="#f89838" d="M19,13H5V11H19V13Z"></path></svg>
+                </button>
+              </span>
+              <span className="d-flex align-items-center">
+                <h4 className="d-inline font-weight-normal h4" style={{ marginLeft: '0.2rem', marginRight: '0.2rem' }}>{this.state.year} year</h4>
+              </span>
+              <span>
+                <button onClick={this.increaseYear} className={classes.btnRound}>
+                  {/* <img style={{ maxWidth: '30px', display: 'block' }} src={require('../../../assets/plus.PNG')} alt="plus" /> */}
+                   <svg className={classes.btnSvg} viewBox="0 0 24 24"><path fill="#f89838" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z"></path></svg> 
+                </button>
+              </span>
             </div>
           </div>
         </div>
