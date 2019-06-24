@@ -21,6 +21,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <style>
+      body, button, p, ul, * {
+        touch-action: manipulation;
+      }
+    </style>
     <title>Polly</title>
   </head>
   <body>
@@ -40,6 +45,21 @@
       document.addEventListener('gesturestart', function (e) {
       e.preventDefault();
       });
+
+      function preventZoom(e) {
+          var t2 = e.timeStamp;
+          var t1 = e.currentTarget.dataset.lastTouch || t2;
+          var dt = t2 - t1;
+          var fingers = e.touches.length;
+          e.currentTarget.dataset.lastTouch = t2;
+
+          if (!dt || dt > 500 || fingers > 1) return; // not double-tap
+
+          e.preventDefault();
+          e.target.click();
+        }
+        document.getElementsByTagName('body')[0].addEventListener('touchstart', preventZoom); 
+      
     </script>
   </body>
 </html>
