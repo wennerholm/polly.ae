@@ -2,7 +2,7 @@
   "name": "polly",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mortuz.github.io/polly/",
+  "homepage": "https://polly.ae",
   "dependencies": {
     "@babel/core": "7.4.3",
     "@babel/runtime": "^7.4.4",
