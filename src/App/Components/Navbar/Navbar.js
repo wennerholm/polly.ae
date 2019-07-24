@@ -16,16 +16,18 @@ class NavbarComponent extends Component {
           </LinkContainer>
 
           <LinkContainer to="/">
-            <Navbar.Brand><span style={{ color: '#dc1f5b', fontSize: '24px', fontWeight: 'bold' }}>Polly</span></Navbar.Brand>
+            <Navbar.Brand><span style={{ color: '#dc1f5b', fontSize: '24px', fontWeight: 'bold' }}>Polly <small style={{ color: '#00bcd4', fontSize: 12 }}>BETA</small></span></Navbar.Brand>
           </LinkContainer>
 
           <LinkContainer to="car-loan">
             <Nav.Link><FontAwesomeIcon style={{ color: '#000000' }} icon="mobile" /></Nav.Link>
           </LinkContainer>
         </div>
-        <div className="container d-none d-lg-flex" style={{ height: '80px'}}>
+        <div className="container d-none d-lg-flex" style={{ height: '80px' }}>
           <LinkContainer to="/">
-            <Navbar.Brand><span style={{ color: '#dc1f5b', fontSize: '24px', fontWeight: 'bold' }}>Polly</span></Navbar.Brand>
+            <Navbar.Brand>
+              <span style={{ color: '#dc1f5b', fontSize: '24px', fontWeight: 'bold' }}>Polly</span>
+            </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -35,11 +37,16 @@ class NavbarComponent extends Component {
               </LinkContainer>
             </Nav>
 
+            <Nav className="mx-auto">
+              <h3 style={{ color: '#00bcd4' }}> BETA VERSION</h3>
+            </Nav>
+
             <Nav className="ml-auto">
               <LinkContainer to="car-loan">
                 <Nav.Link><FontAwesomeIcon style={{ color: '#000000' }} icon="mobile" /><span style={{ color: '#000000' }}> Contact Us</span></Nav.Link>
               </LinkContainer>
             </Nav>
+
           </Navbar.Collapse>
 
         </div>

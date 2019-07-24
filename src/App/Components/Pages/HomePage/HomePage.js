@@ -31,7 +31,7 @@ export default class HomePage extends React.Component {
                   <div className={classes.flex}>
                     <div className={classes.flexyRow}>
                     <div className="d-none d-lg-block" style={{ maxWidth: '40%', }}>
-                      <h1 className="h2" style={{ fontSize: '45px' }}>Compare loans up till AED600,000</h1>
+                      <h1 className="h2" style={{ fontSize: '45px' }}>Personal Loans up to AED1,000,000</h1>
                         <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Polly is free and only one credit report request is made</b>
 
                         <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
@@ -42,7 +42,7 @@ export default class HomePage extends React.Component {
                       </div>
 
                     <div className="d-lg-none text-center pt-3">
-                      <h1 className="h2">Compare loans up till AED600,000</h1>
+                      <h1 className="h2">Personal Loans up to AED1,000,000</h1>
                         <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Free and only one credit report</b>
 
                         <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
