@@ -15,6 +15,7 @@ class Calculator extends Component {
     applicant: {},
     coApplicant: {},
     hasPartner: false,
+    maxLoanAmount: 1000000
   };
 
   increaseYear = () => {
@@ -166,7 +167,7 @@ class Calculator extends Component {
             axis="x"
             xstep={5000}
             xmin={10000}
-            xmax={600000}
+            xmax={this.state.maxLoanAmount}
             x={this.state.loanAmount}
             onChange={amount => this.setState({ loanAmount: amount.x})}
             styles={{
@@ -185,7 +186,7 @@ class Calculator extends Component {
               }
             }}
           />
-          <span className="ml-3 small" style={{ color: '#9d9d9d' }}>600,000</span>
+          <span className="ml-3 small" style={{ color: '#9d9d9d' }}>{this.state.maxLoanAmount.toLocaleString()}</span>
         </div>
 
         <div className="row mt-2 text-center">
