@@ -16,7 +16,7 @@ class NavbarComponent extends Component {
           </LinkContainer>
 
           <LinkContainer to="/">
-            <Navbar.Brand><span style={{ color: '#dc1f5b', fontSize: '24px', fontWeight: 'bold' }}>Polly <small style={{ color: '#00bcd4', fontSize: 12 }}>BETA</small></span></Navbar.Brand>
+            <Navbar.Brand><span style={{ color: '#dc1f5b', fontSize: '24px', fontWeight: 'bold' }}>Polly <small style={{ color: '#00bcd4', fontSize: 12 }}>BETA VERSION</small></span></Navbar.Brand>
           </LinkContainer>
 
           <LinkContainer to="car-loan">
