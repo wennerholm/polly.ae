@@ -20,7 +20,8 @@ class NavbarComponent extends Component {
           </LinkContainer>
 
           <LinkContainer to="car-loan">
-            <Nav.Link><FontAwesomeIcon style={{ color: '#000000' }} icon="mobile" /></Nav.Link>
+            <div />
+            {/* <Nav.Link><FontAwesomeIcon style={{ color: '#000000' }} icon="mobile" /></Nav.Link> */}
           </LinkContainer>
         </div>
         <div className="container d-none d-lg-flex" style={{ height: '80px' }}>
@@ -42,9 +43,9 @@ class NavbarComponent extends Component {
             </Nav>
 
             <Nav className="ml-auto">
-              <LinkContainer to="car-loan">
+              {/* <LinkContainer to="car-loan">
                 <Nav.Link><FontAwesomeIcon style={{ color: '#000000' }} icon="mobile" /><span style={{ color: '#000000' }}> Contact Us</span></Nav.Link>
-              </LinkContainer>
+              </LinkContainer> */}
             </Nav>
 
           </Navbar.Collapse>
