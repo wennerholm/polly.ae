@@ -26,40 +26,40 @@ export default class HomePage extends React.Component {
             <div className={[classes.flex, 'd-none', 'd-xl-flex'].join(' ')}></div>
 
             {/* <div className={classes.flexyRow}> */}
-              <div className={[classes.flex, classes.x3, classes.mainStage, 'mt-5'].join(' ')}>
-                <div className={classes.flexyRow}>
-                  <div className={classes.flex}>
-                    <div className={classes.flexyRow}>
+            <div className={[classes.flex, classes.x3, classes.mainStage, 'mt-5'].join(' ')}>
+              <div className={classes.flexyRow}>
+                <div className={classes.flex}>
+                  <div className={classes.flexyRow}>
                     <div className="d-none d-lg-block" style={{ maxWidth: '40%', }}>
                       <h1 className="h2" style={{ fontSize: '45px' }}>Personal Loans up to AED1,000,000</h1>
-                        <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Polly is free and only one credit report request is made</b>
+                      <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Polly is free and only one credit report request is made</b>
 
-                        <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
+                      <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
-                        <p>
-                          By negotiating with the banks on your behalf we will compile quotes from over 15 banks in United Arab Emirates to find the lowest possible rate. Submit an application today and get your quotes!
+                      <p>
+                        By negotiating with the banks on your behalf we will compile quotes from over 15 banks in United Arab Emirates to find the lowest possible rate. Submit an application today and get your quotes!
                       </p>
-                      </div>
+                    </div>
 
                     <div className="d-lg-none text-center pt-3">
                       <h1 className="h2">Personal Loans up to AED1,000,000</h1>
-                        <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Free and only one credit report</b>
+                      <b style={{ color: '#dc1f5b', fontSize: '20px' }}>Free and only one credit report</b>
 
-                        <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
+                      <p>Since 2019 Polly has helped thousands of consumers to obtain personal loans with low interest rate.</p>
 
-                        <ul className={classes.checklist}>
-                          <li>Loans up to AED 600,000</li>
-                          <li>Response from 15 banks</li>
-                          <li>Apply in 2 minutes</li>
-                        </ul>
-                      </div>
-
-                      <Calculator style={{ width: '100%', maxWidth: '100%', }} />
-
+                      <ul className={classes.checklist}>
+                        <li>Minimum monthly salary of AED3,000</li>
+                        <li>Response from up to 15 banks</li>
+                        <li>Apply in 2 minutes</li>
+                      </ul>
                     </div>
+
+                    <Calculator style={{ width: '100%', maxWidth: '100%', }} />
+
                   </div>
                 </div>
               </div>
+            </div>
             {/* </div> */}
 
             <div className={[classes.flex, 'd-none', 'd-xl-flex'].join(' ')}></div>
@@ -106,7 +106,7 @@ export default class HomePage extends React.Component {
           </div>
         </section>
 
-       
+
 
 
         <section className="steps py-5  mb-5">
@@ -114,7 +114,7 @@ export default class HomePage extends React.Component {
 
             <div className="d-flex justify-content-center align-items-center text-center" style={{ flexWrap: 'wrap', flexDirection: 'row' }}>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank1.jpeg')} alt="bank img"/>
+                <img src={require('../../../../assets/banks/bank1.jpeg')} alt="bank img" />
               </div>
               <div className={classes.bankWidthDiv}>
                 <img src={require('../../../../assets/banks/bank2.jpg')} alt="bank img" />
@@ -129,19 +129,19 @@ export default class HomePage extends React.Component {
                 <img src={require('../../../../assets/banks/bank5.jpg')} alt="bank img" />
               </div>
               <div className={classes.bankWidthDiv}>
-                <img src={require('../../../../assets/banks/bank6.jpg')}  alt="bank img"/>
+                <img src={require('../../../../assets/banks/bank6.jpg')} alt="bank img" />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank7.jpg')}  alt="bank img"/>
+                <img src={require('../../../../assets/banks/bank7.jpg')} alt="bank img" />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank8.png')} alt="bank img"/>
+                <img src={require('../../../../assets/banks/bank8.png')} alt="bank img" />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank9.png')} alt="bank img"/>
+                <img src={require('../../../../assets/banks/bank9.png')} alt="bank img" />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank10.jpg')}  alt="bank img"/>
+                <img src={require('../../../../assets/banks/bank10.jpg')} alt="bank img" />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
                 <img src={require('../../../../assets/banks/bank11.jpg')} alt="bank img" />
@@ -150,7 +150,7 @@ export default class HomePage extends React.Component {
                 <img src={require('../../../../assets/banks/bank12.jpg')} alt="bank img" />
               </div>
               <div className={[classes.bankWidthDiv, this.state.moreBanks ? null : classes.moreBank].join(' ')}>
-                <img src={require('../../../../assets/banks/bank13.jpg')}  alt="bank img"/>
+                <img src={require('../../../../assets/banks/bank13.jpg')} alt="bank img" />
               </div>
             </div>
 
@@ -236,7 +236,7 @@ export default class HomePage extends React.Component {
                         <li>Have a minimum monthly salary of AED3,000</li>
                         <li>Hold a valid UAE residence Visa & Emirates ID</li>
                         <li>Salary transfer may be required</li>
-                        </ul>
+                      </ul>
                     </div>
                   </div>
 
@@ -255,7 +255,7 @@ export default class HomePage extends React.Component {
                     <div className="mt-3" style={{ display: this.state.questions.two ? 'block' : 'none' }}>
                       <p>Yes! Even though you will potentially receive quotes from up to 30 banks, only one request is made for your Credit Report from Al Etihad Credit Bureau. Banks may require further information in regards to your application to ensure a well-informed credit assessment.</p>
                       <p>To maximise the chances to submit a successful application we recommend to add an co-applicant, as this drastically enhances your credit profile which not only makes you more eligible for a loan, but can also reduce your interest rate!</p>
-                      </div>
+                    </div>
                   </div>
 
                 </div>
